@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px;
+  padding: 60px 0;
+  margin: 0;
+  color: #f7f7f7;
+  background: #121212;
+  font-family: "Euclid Circular A", "Poppins";
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  top: -100px;
+  left: -100px;
+  right: -100px;
+  height: 60vmax;
+  rotate: -4deg;
+  background: #0f71ff;
+}
+
+.card {
+  display: grid;
+  place-items: start;
+  gap: 10px;
+  order: 2;
+  width: 75%;
+  margin: 0 auto;
+  border-radius: 12px;
+  padding: 50px;
+  background: #1e1e1e;
+  font-size: 125%;
+}
+
+.card.primary {
+  order: 1;
+}
+
+.card.primary var {
+  font-size: 60px;
+}
+
+@media (width >= 750px) {
+  body {
+    padding: 0;
+    flex-direction: row;
+  }
+
+  body,
+  html {
+    height: 100%;
+  }
+
+  .card.primary {
+    order: 2;
+  }
+
+  .card {
+    width: 30vw;
+    max-width: 30vw;
+    margin: 0;
+    font-size: 100%;
+  }
+}
+
+@media (width >= 950px) {
+}
+
+@media (width >= 1000px) {
+  .card {
+    width: 300px;
+    max-width: 300px;
+  }
+}
+
+p,
+h2 {
+  margin: 0;
+}
+
+.card var {
+  color: #4087ed;
+  font-weight: 400;
+  font-size: 50px;
+  font-style: normal;
+  margin-bottom: 10px;
+}
+
+.card var small {
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+ul li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 6px 0;
+}
+
+ul li img {
+  width: 16px;
+}
+
+.card button {
+  display: grid;
+  place-items: center;
+  min-width: 200px;
+  padding: 14px 0;
+  border-radius: 6px;
+  border: 2px solid #4087ed;
+  background: transparent;
+  color: #4087ed;
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.card button.primary {
+  background: #4087ed;
+  color: #f7f7f7;
+}
