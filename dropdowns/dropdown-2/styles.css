@@ -1,0 +1,112 @@
+body {
+  font-family: "Euclid Circular A", "Poppins";
+  color: #f7f7f7;
+  background: var(--color-background);
+}
+
+:root {
+  --color-border: rgb(255 255 255 / 16%);
+  --color-background: #181818;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+}
+
+nav > img {
+  width: 40px;
+}
+
+nav > h1 {
+  font-weight: 400;
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+nav > button {
+  background: #08a081;
+  height: 40px;
+  border-radius: 6px;
+  border: 0;
+  color: #f7f7f7;
+  font-family: inherit;
+  padding: 0 14px;
+  font-size: 16px;
+}
+
+.links {
+  list-style: none;
+  margin: 0 20px 0 auto;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.dropdown {
+  position: relative;
+  cursor: pointer;
+}
+
+.dropdown > a {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 72px;
+}
+
+.dropdown > a > span {
+  font-size: 20px;
+  color: rgb(255 255 255 / 24%);
+  translate: 0 2px;
+}
+
+.menu {
+  position: absolute;
+  top: 60px;
+  right: -20px;
+  width: 180px;
+  border-radius: 10px;
+  border: 1px solid var(--color-border);
+  padding: 8px 0;
+  display: grid;
+  background: var(--color-background);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  border-top: 1px solid var(--color-border);
+  border-right: 1px solid var(--color-border);
+  top: -7px;
+  right: 22px;
+  width: 12px;
+  height: 12px;
+  rotate: -45deg;
+}
+
+.dropdown:hover .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu > a {
+  padding: 12px 20px;
+  font-size: 14px;
+}
+
+.menu > a:hover {
+  background: rgb(255 255 255 / 4%);
+}
