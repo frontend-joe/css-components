@@ -23,12 +23,12 @@ body {
   right: -100px;
   height: 60vmax;
   rotate: -4deg;
-  background: #0f71ff;
+  background: #4f97ff;
 }
 
 .card {
   display: grid;
-  place-items: start;
+  place-items: center;
   gap: 10px;
   order: 2;
   width: 75%;
