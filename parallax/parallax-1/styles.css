@@ -1,0 +1,98 @@
+:root {
+  --color-background: #0c0b0f;
+}
+
+body {
+  margin: 0;
+  background: var(--color-background);
+  font-family: "Euclid Circular A", "Poppins";
+  color: #f0e5ff;
+}
+
+main {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 2px;
+}
+
+section {
+  transform-style: preserve-3d;
+  position: relative;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+section:last-child {
+  height: 60vh;
+}
+
+.no-parallax {
+  background-color: var(--color-background);
+  z-index: 999;
+  padding: 0 80px;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.no-parallax p {
+  opacity: 0.5;
+  margin: 0;
+}
+
+.no-parallax img {
+  width: 220px;
+}
+
+.parallax {
+  height: 40vh;
+}
+
+section h1 {
+  text-align: center;
+  font-size: 60px;
+}
+
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+}
+
+.bg::after {
+  background: url("bg.png");
+  background-size: cover;
+}
+
+h2 {
+  font-weight: 400;
+}
+
+footer .footer-inner {
+  display: flex;
+  margin-right: -100px;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0 5px 0 0;
+}
+
+footer ul:last-of-type {
+  padding: 0;
+}
+
+footer ul li {
+  font-weight: 400;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}

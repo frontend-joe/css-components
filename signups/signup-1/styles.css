@@ -1,9 +1,10 @@
 body {
-  background: #f8f9fb;
+  background: #651acd;
   font-family: "Euclid Circular A", "Poppins";
   display: grid;
   place-items: center;
   height: 100vh;
+  padding: 0 30px;
   margin: 0;
 }
 
@@ -12,14 +13,11 @@ body {
 }
 
 .signup-button {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   gap: 10px;
   padding: 0 20px 0 20px;
   width: 100%;
   height: 56px;
-  background: #161022;
+  background: #7c25f7;
   border: 0;
   border-radius: 6px;
   color: #f9f9f9;
@@ -27,48 +25,100 @@ body {
   font-size: 16px;
 }
 
-.modal {
-  width: 430px;
-  background: #ffffff;
+.card {
+  width: 100%;
+  background: #1a161f;
   border-radius: 12px;
   padding: 0 40px 50px;
   box-shadow: 0 10px 30px rgb(0 0 0 / 24%);
 }
 
-.modal header {
-  background: linear-gradient(90deg, #773ecb, #9f63ff);
+.card-inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  background: #7c25f7;
   color: #f9f9f9;
-  margin: -85px -20px 40px;
+  margin: -85px 0 40px;
   border-radius: 12px;
   height: 170px;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding-left: 40px;
+  padding: 0 20px;
+  text-align: center;
   box-shadow: 0 16px 30px rgb(0 0 0 / 12%);
 }
 
-.modal img {
+@media (width > 470px) {
+  body {
+    padding: 0;
+  }
+
+  .card {
+    width: 60%;
+    min-width: 408px;
+  }
+}
+
+@media (width > 750px) {
+  .card {
+    border-radius: 0;
+    min-width: auto;
+  }
+
+  .card-inner {
+    background: #1a161f;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 7%;
+    width: 50%;
+  }
+
+  .header {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    margin: 0;
+    padding-left: 10%;
+    text-align: left;
+  }
+}
+
+.card img {
   height: 40px;
   margin-bottom: 40px;
 }
 
-.modal h2 {
-  margin-bottom: 10px;
-  font-size: 29px;
-}
-
-.modal h3 {
-  opacity: 0.45;
+.card h2 {
+  margin: 0 0 10px;
+  font-size: 28px;
   font-weight: 400;
 }
 
-.modal form {
+.card h3 {
+  margin: 0;
+  opacity: 0.6;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.card form {
   display: grid;
   gap: 16px;
 }
 
-.modal .textbox {
+.card .textbox {
   position: relative;
   width: 100%;
   height: 56px;
@@ -76,7 +126,7 @@ body {
   align-items: center;
 }
 
-.modal .textbox span {
+.card .textbox span {
   position: relative;
   z-index: 1;
   left: 16px;
@@ -85,13 +135,13 @@ body {
   pointer-events: none;
 }
 
-.modal input {
+.card input {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   border: 0;
-  background: #ececec;
+  background: rgb(255 255 255 / 8%);
   height: 56px;
   border-radius: 6px;
   font-family: inherit;
@@ -99,11 +149,12 @@ body {
   font-size: 16px;
 }
 
-.modal input::placeholder {
+.card input::placeholder {
   color: #96939c;
 }
 
-.modal > p {
+.card-inner > p {
   color: #96939c;
   margin: 30px 0 0;
+  text-align: center;
 }
