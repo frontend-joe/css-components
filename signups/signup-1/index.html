@@ -15,28 +15,59 @@
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="background.css" />
   </head>
   <body>
-    <div class="card">
-      <div class="header">
-        <h2>Sign Up</h2>
-        <h3>Try Datagram today</h3>
-      </div>
-      <div class="card-inner">
-        <img src="logo.svg" />
-        <form>
-          <div class="textbox">
-            <span class="material-symbols-outlined">account_circle</span>
-            <input type="email" placeholder="Email" />
-          </div>
-          <div class="textbox">
-            <span class="material-symbols-outlined">lock</span>
-            <input type="password" placeholder="Password" />
-          </div>
-          <button class="signup-button" type="submit">Sign up free</button>
-        </form>
-        <p>No credit card information required</p>
-      </div>
+    <div class="background">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="signup">
+      <h2>Sign Up</h2>
+      <h3>It's quick & simple</h3>
+      <form class="form">
+        <div class="textbox">
+          <input type="text" required />
+          <label>Name</label>
+          <span class="material-symbols-outlined"> account_circle </span>
+        </div>
+        <div class="textbox">
+          <input type="text" required />
+          <label>Email</label>
+          <span class="material-symbols-outlined"> email </span>
+        </div>
+        <div class="textbox">
+          <input type="password" required />
+          <label>Password</label>
+          <span class="material-symbols-outlined"> lock </span>
+        </div>
+        <p>
+          Signed up already?
+          <a href="#">Login here</a>
+        </p>
+        <button type="submit">
+          Join The Elitists
+          <span class="material-symbols-outlined"> arrow_forward </span>
+        </button>
+      </form>
     </div>
   </body>
 </html>
