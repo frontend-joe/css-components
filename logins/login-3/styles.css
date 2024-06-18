@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+}
+
+@keyframes gradient {
+  100% {
+    background-size: 4000px 1000px;
+  }
+}
+
+:root {
+  --color-muted: rgb(255 255 255 / 38%);
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+  padding: 0 24px;
+  background-color: #0d2a47;
+  background-image: url("bg.svg");
+  background-size: 2000px 1000px;
+  background-position: -500px 0;
+  color: #f9f9f9;
+  font-family: "Euclid Circular A";
+  animation: gradient 10s infinite alternate linear;
+}
+
+@media (width >= 420px) {
+  body {
+    padding: 0;
+  }
+
+  .login {
+    width: 60%;
+  }
+}
+
+.login {
+  position: fixed;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  width: 90%;
+  padding: 70px 30px 44px;
+  border-radius: 22px;
+  background: rgb(0 0 0 / 50%);
+  backdrop-filter: blur(20px);
+  text-align: center;
+}
+
+@media (width >= 420px) {
+  .login {
+    width: 380px;
+  }
+}
+
+.avatar > img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.login > h2 {
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0 0 4px;
+}
+
+.login > h3 {
+  color: var(--color-muted);
+  margin: 0 0 30px;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.login-form {
+  display: grid;
+  gap: 16px;
+  place-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+.textbox {
+  width: 100%;
+  position: relative;
+}
+
+.textbox span {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  translate: 0 -50%;
+  color: var(--color-muted);
+}
+
+.login-form input,
+.login-form button {
+  width: 100%;
+  height: 60px;
+  outline: none;
+  padding: 0;
+  font-family: inherit;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.login-form input {
+  background: transparent;
+  border: 2px solid rgb(255 255 255 / 10%);
+  font-size: 18px;
+  padding: 0 20px 0 50px;
+  color: inherit;
+}
+
+.login-form input::placeholder {
+  color: var(--color-muted);
+}
+
+.login-form input:focus {
+  border-color: #157ae1;
+}
+
+.login-form input:focus ~ span {
+  color: #157ae1;
+}
+
+.login-form button {
+  cursor: pointer;
+  background: #157ae1;
+  color: #f9f9f9;
+  border: 0;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.login-form a {
+  color: #157ae1;
+  font-size: 16px;
+  text-align: left;
+  text-decoration: none;
+}

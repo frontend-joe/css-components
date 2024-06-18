@@ -4,13 +4,14 @@
 
 body {
   margin: 0;
-  background: #f0f0ff;
+  background: #1d1b24;
   color: rgb(255 255 255 / 95%);
   height: 100vh;
   font-family: "Euclid Circular A";
 }
 
 .sidebar {
+  overflow: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -19,7 +20,7 @@ body {
   flex-direction: column;
   gap: 8px;
   width: 64px;
-  background: #1d1b24;
+  background: #522ad3;
   transition: width 0.4s;
 }
 
@@ -39,6 +40,7 @@ body {
 
 .header img {
   height: 24px;
+  rotate: 180deg;
   margin-left: 14px;
 }
 
@@ -86,12 +88,11 @@ body {
   font-weight: 400;
   line-height: 1;
   padding: 0 0 0 16px;
-  color: rgb(255 255 255 / 95%);
-  opacity: 0.5;
+  opacity: 0.75;
   cursor: pointer;
 }
 
 .sidebar a:hover {
-  background: rgb(255 255 255 / 8%);
+  background: rgb(0 0 0 / 20%);
   opacity: 1;
 }
