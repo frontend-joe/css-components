@@ -1,0 +1,123 @@
+:root {
+  --color-bg: #28284e;
+  --color-text: #fefcff;
+  --gradient: linear-gradient(45deg, #01ebaf, #00a9cd, #6380ff);
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  color: var(--color-text);
+  background: var(--color-bg);
+  font-family: "Euclid Circular A", "Poppins";
+  display: grid;
+  place-items: center;
+  padding: 0 30px;
+}
+
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.dashboard {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 180px);
+  gap: 24px;
+}
+
+@media (width >= 620px) {
+  .card {
+    min-width: 33.33%;
+  }
+
+  .card-icon img:first-child {
+    width: 5vw;
+    max-width: 40px;
+  }
+
+  .dashboard {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.card {
+  padding: 20px;
+  border-radius: 16px;
+  background: var(--color-bg);
+  box-shadow: 7px 7px 29px #191931, -7px -7px 29px #37376b;
+}
+
+.card .more {
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  font-size: 16px;
+}
+
+.card h3 {
+  font-size: 12px;
+  opacity: 0.5;
+  margin-bottom: 16px;
+}
+
+.card var {
+  font-style: normal;
+  font-size: 38px;
+}
+
+.card var abbr {
+  font-size: 12px;
+  opacity: 0.4;
+}
+
+.card.primary {
+  background: var(--gradient);
+}
+
+.card-icon,
+.card-progress {
+  height: 120px;
+  display: flex;
+}
+
+.card-icon {
+  gap: 12px;
+  align-items: center;
+}
+
+.card-icon img:last-child {
+  margin-left: auto;
+}
+
+.card-icon h3 {
+  margin: 0;
+}
+
+.card-progress {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card progress {
+  display: block;
+  width: 100%;
+  appearance: none;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  height: 8px;
+}
+
+.card progress::-webkit-progress-bar {
+  background: rgb(255 255 255 / 6%);
+  border-radius: 10px;
+}
+
+.card progress::-webkit-progress-value {
+  background: var(--gradient);
+  border-radius: 10px;
+}
