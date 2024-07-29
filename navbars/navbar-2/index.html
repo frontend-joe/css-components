@@ -19,11 +19,14 @@
   </head>
   <body>
     <nav class="navbar">
-      <button onclick="toggleMenu()" class="burger"></button>
-      <button class="button">Home</button>
+      <button
+        onclick="document.body.classList.toggle('open')"
+        class="burger"
+      ></button>
+      <h1>J</h1>
       <div class="dropdowns">
         <div class="dropdown">
-          <button class="button">
+          <button>
             Services
             <img src="chevron.svg" />
           </button>
@@ -34,7 +37,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <button class="button">
+          <button>
             Products
             <img src="chevron.svg" />
           </button>
@@ -45,7 +48,7 @@
           </div>
         </div>
         <div class="dropdown">
-          <button class="button">
+          <button>
             Support
             <img src="chevron.svg" />
           </button>
@@ -57,8 +60,5 @@
         </div>
       </div>
     </nav>
-    <script>
-      const toggleMenu = () => document.body.classList.toggle("open");
-    </script>
   </body>
 </html>
