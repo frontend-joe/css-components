@@ -24,12 +24,15 @@ input {
 .signup {
   position: fixed;
   z-index: 10;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
+  top: 0;
+  right: 0;
+  bottom: 0;
   width: 50%;
   max-width: 460px;
-  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
   background: rgb(32 31 33 / 80%);
   backdrop-filter: blur(50px);
 }
