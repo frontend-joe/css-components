@@ -1,31 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Login 3</title>
+    <title>Login 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,600,0,0"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="login">
-      <div class="avatar">
-        <img src="avatar.png" />
-      </div>
+    <div class="card">
       <h2>Login</h2>
-      <h3>Welcome back!</h3>
-      <form class="login-form">
-        <div class="textbox">
-          <input type="email" placeholder="Username" />
-          <span class="material-symbols-outlined"> account_circle </span>
-        </div>
-        <div class="textbox">
-          <input type="password" placeholder="Password" />
-          <span class="material-symbols-outlined"> lock </span>
-        </div>
-        <button type="submit">LOGIN</button>
-        <a href="https://website.com">Forgot your credentials?</a>
+      <h3>Enter your credentials</h3>
+      <form class="form">
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <label>
+          <input type="checkbox" />
+          <span class="checkbox-wrapper">
+            <span class="checkbox"></span>
+          </span>
+          <span class="checkbox-text"> Stay logged in </span>
+        </label>
+        <button type="submit">Login</button>
       </form>
     </div>
   </body>

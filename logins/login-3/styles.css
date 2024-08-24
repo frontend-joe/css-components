@@ -2,14 +2,14 @@
   box-sizing: border-box;
 }
 
-@keyframes gradient {
+@keyframes rotate {
   100% {
-    background-size: 4000px 1000px;
+    background-position: 25% 50%;
   }
 }
 
 :root {
-  --color-muted: rgb(255 255 255 / 38%);
+  --color-primary: #3192e5;
 }
 
 body {
@@ -18,129 +18,160 @@ body {
   margin: 0;
   height: 100vh;
   padding: 0 24px;
-  background-color: #0d2a47;
+  background-color: var(--color-primary);
   background-image: url("bg.svg");
-  background-size: 2000px 1000px;
-  background-position: -500px 0;
-  color: #f9f9f9;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Euclid Circular A";
-  animation: gradient 10s infinite alternate linear;
+  color: #f9f9f9;
+  animation: rotate 6s infinite alternate linear;
 }
 
-@media (width >= 420px) {
-  body {
-    padding: 0;
-  }
-
-  .login {
-    width: 60%;
-  }
-}
-
-.login {
-  position: fixed;
+.card {
+  position: relative;
   z-index: 3;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  width: 90%;
+  width: 100%;
+  margin: 0 20px;
   padding: 70px 30px 44px;
-  border-radius: 22px;
-  background: rgb(0 0 0 / 50%);
-  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  background: rgba(0 0 0 / 17%);
+  backdrop-filter: blur(10px);
   text-align: center;
 }
 
-@media (width >= 420px) {
-  .login {
-    width: 380px;
+@media (width >= 448px) {
+  .card {
+    margin: 0;
+    width: 70%;
+    min-width: 400px;
   }
 }
 
-.avatar > img {
-  width: 120px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 50%;
+@media (width >= 500px) {
+  body {
+    padding: 0;
+  }
 }
 
-.login > h2 {
+@media (width >= 628px) {
+  .card {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 44px;
+    width: 50%;
+    max-width: 500px;
+    min-width: auto;
+    display: flex;
+    border-radius: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+.card > h2 {
   font-size: 36px;
-  font-weight: 500;
-  margin: 0 0 4px;
+  font-weight: 400;
+  margin: 0 0 12px;
 }
 
-.login > h3 {
-  color: var(--color-muted);
-  margin: 0 0 30px;
-  font-weight: 500;
+.card > h3 {
+  color: rgb(255 255 255 / 38%);
+  margin: 0 0 48px;
+  font-weight: 400;
   font-size: 16px;
 }
 
-.login-form {
-  display: grid;
-  gap: 16px;
-  place-items: center;
+.form {
   width: 100%;
   margin: 0;
+  display: grid;
+  gap: 16px;
 }
 
-.textbox {
+.form > :is(input, button) {
   width: 100%;
-  position: relative;
+  height: 56px;
+  border-radius: 6px;
+  border: 0;
 }
 
-.textbox span {
-  position: absolute;
-  top: 50%;
-  left: 16px;
-  translate: 0 -50%;
-  color: var(--color-muted);
-}
-
-.login-form input,
-.login-form button {
-  width: 100%;
-  height: 60px;
-  outline: none;
-  padding: 0;
+.form > input {
+  color: rgb(255 255 255 / 96%);
+  background: rgb(255 255 255 / 8%);
   font-family: inherit;
   font-size: 16px;
-  border-radius: 8px;
+  padding: 0 16px;
 }
 
-.login-form input {
-  background: transparent;
-  border: 2px solid rgb(255 255 255 / 10%);
-  font-size: 18px;
-  padding: 0 20px 0 50px;
-  color: inherit;
+.form > input:focus {
+  outline: var(--color-primary);
 }
 
-.login-form input::placeholder {
-  color: var(--color-muted);
+.form > input::placeholder {
+  color: rgb(255 255 255 / 38%);
 }
 
-.login-form input:focus {
-  border-color: #157ae1;
-}
-
-.login-form input:focus ~ span {
-  color: #157ae1;
-}
-
-.login-form button {
+.form > button {
   cursor: pointer;
-  background: #157ae1;
+  width: 100%;
+  height: 56px;
+  padding: 0 16px;
+  background: var(--color-primary);
   color: #f9f9f9;
   border: 0;
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: center;
+  transition: all 0.375s;
 }
 
-.login-form a {
-  color: #157ae1;
+.form > a {
+  color: var(--color-primary);
   font-size: 16px;
   text-align: left;
   text-decoration: none;
+  margin-bottom: 30px;
+}
+
+.form label {
+  display: block;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 6px 0 8px;
+  color: rgb(255 255 255 / 50%);
+}
+
+.form label input {
+  visibility: hidden;
+  display: none;
+}
+
+.form input:checked ~ .checkbox-wrapper .checkbox {
+  transform: rotate(45deg);
+  width: 14px;
+  margin-left: 12px;
+  margin-top: -2px;
+  border-color: var(--color-primary);
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-radius: 0;
+}
+
+.checkbox-wrapper {
+  width: 32px;
+  height: 32px;
+}
+
+.checkbox {
+  display: block;
+  width: inherit;
+  height: inherit;
+  border: 3px solid rgb(255 255 255 / 18%);
+  border-radius: 6px;
+  transition: all 0.375s;
 }
