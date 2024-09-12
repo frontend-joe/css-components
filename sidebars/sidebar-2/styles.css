@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #073e77;
+  background-image: url("bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30%;
+  height: 100vh;
+  font-family: "Euclid Circular A";
+}
+
+button,
+label {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 260px;
+  border-radius: 16px;
+  padding: 0 16px;
+  background: rgb(0 0 0 / 32%);
+  backdrop-filter: blur(30px);
+  transition: width 0.4s;
+}
+
+.sidebar header {
+  display: flex;
+  align-items: center;
+  height: 72px;
+  padding-top: 10px;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.sidebar header img {
+  height: 44px;
+}
+
+.sidebar input {
+  scale: 0;
+  position: absolute;
+}
+
+.sidebar input#settings:checked ~ div {
+  height: 150px;
+}
+
+.sidebar input#create:checked ~ div {
+  height: 200px;
+}
+
+.sidebar input#profile:checked ~ div {
+  height: 100px;
+}
+
+.sidebar :is(button, label) {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0 16px;
+  color: rgb(255 255 255 / 95%);
+}
+
+.sidebar label p:nth-child(2) {
+  flex: 1 1 auto;
+}
+
+.sidebar input:checked ~ label {
+  background: #1960f3;
+}
+
+.sidebar label i {
+  transition: 0.3s;
+}
+
+.sidebar input:checked ~ label > i:nth-child(3) {
+  rotate: -180deg;
+}
+
+.sidebar input:not(:checked) ~ label:hover,
+.sidebar button:hover {
+  background: rgb(0 0 0 / 15%);
+}
+
+.sidebar ul {
+  display: grid;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sub-menu {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition: 0.5s;
+}
+
+.sub-menu ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+}
+
+.sub-menu button {
+  padding-left: 52px;
+}
+
+.sub-menu button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  translate: 0 -50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 35%);
+}
+
+.sidebar .material-symbols-outlined {
+  font-size: 16px;
+}
+
+.sidebar i {
+  font-size: 20px;
+  width: 20px;
+  max-width: 20px;
+  min-width: 20px;
+}
