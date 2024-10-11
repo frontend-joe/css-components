@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #f4f5fa;
+  color: #020306;
+  font-family: "Euclid Circular A", "Poppins";
+}
+
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.cards {
+  display: flex;
+  gap: 30px;
+}
+
+article {
+  position: relative;
+  perspective: 1000px;
+  width: 300px;
+  height: 320px;
+}
+
+article .front,
+article .back {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  backface-visibility: hidden;
+  backdrop-filter: blur(10px);
+  background: #ffffff;
+  box-shadow: rgba(149, 157, 165, 0.05) 0px 8px 24px;
+  border-radius: 16px;
+  padding: 32px;
+  transition: 0.6s;
+  cursor: pointer;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+article .material-symbols-outlined {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 34px;
+}
+
+input {
+  position: absolute;
+  scale: 0;
+}
+
+input:checked ~ article .back {
+  transform: rotateY(0);
+}
+
+input:checked ~ article .front {
+  transform: rotateY(-180deg);
+}
+
+article var {
+  font-style: normal;
+  font-size: 64px;
+  line-height: 1;
+}
+
+article h3 {
+  margin: 0;
+  font-weight: 500;
+  font-size: 22px;
+  color: #b2b5c2;
+}
+
+#summary {
+  color: #643fe1;
+}
+
+#summary span {
+  background: #edebfb;
+}
+
+#overdue {
+  color: #b02ce1;
+}
+
+#overdue span {
+  background: #f7e8ff;
+}
+
+#features {
+  color: #3ac2f0;
+}
+
+#features span {
+  background: #eef9ff;
+}
+
+article :is(h4, p) {
+  opacity: 0.5;
+  font-size: 20px;
+}
+
+article p {
+  margin: 0;
+  color: #020306;
+}
