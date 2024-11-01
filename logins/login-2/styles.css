@@ -9,7 +9,7 @@
 }
 
 :root {
-  --color-primary: #7656f0;
+  --color-primary: #5d0dde;
 }
 
 body {
@@ -41,15 +41,15 @@ body::after {
   margin: 0 20px;
   padding: 70px 30px 44px;
   border-radius: 20px;
-  background: rgb(24 21 36 / 66%);
-  backdrop-filter: blur(10px);
+  background: rgb(24 14 56 / 44%);
+  backdrop-filter: blur(16px);
   text-align: center;
 }
 
 @media (width >= 448px) {
   .login-card {
     margin: 0;
-    width: 70%;
+    width: 80%;
     min-width: 400px;
   }
 }
@@ -60,14 +60,14 @@ body::after {
   }
 }
 
-@media (width >= 628px) {
+@media (width >= 588px) {
   .login-card {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     padding: 0 44px;
-    width: 50%;
+    width: 60%;
     max-width: 500px;
     min-width: auto;
     display: flex;
@@ -78,7 +78,7 @@ body::after {
 }
 
 .login-card > h2 {
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 400;
   margin: 0 0 12px;
 }
@@ -87,7 +87,7 @@ body::after {
   color: rgb(255 255 255 / 38%);
   margin: 0 0 48px;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 20px;
 }
 
 .login-form {
@@ -102,13 +102,13 @@ body::after {
   height: 56px;
   border-radius: 6px;
   border: 0;
+  font-size: 20px;
 }
 
 .login-form > input {
   color: rgb(255 255 255 / 96%);
-  background: rgb(255 255 255 / 8%);
+  background: rgb(55 32 122);
   font-family: inherit;
-  font-size: 16px;
   padding: 0 16px;
 }
 
@@ -129,15 +129,14 @@ body::after {
   color: #f9f9f9;
   border: 0;
   font-family: inherit;
-  font-size: 18px;
   font-weight: 400;
   text-align: center;
   transition: all 0.375s;
 }
 
 .login-form > a {
-  color: var(--color-primary);
-  font-size: 16px;
+  color: rgb(255 255 255 / 38%);
+  font-size: 20px;
   text-align: left;
   text-decoration: none;
   margin-bottom: 30px;
