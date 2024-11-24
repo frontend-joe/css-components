@@ -37,8 +37,8 @@ article .back {
   backface-visibility: hidden;
   backdrop-filter: blur(10px);
   background: #ffffff;
-  box-shadow: rgba(149, 157, 165, 0.05) 0px 8px 24px;
-  border-radius: 16px;
+  box-shadow: rgba(149, 157, 165, 0.05) 0px 8px 14px;
+  border-radius: 20px;
   padding: 32px;
   transition: 0.6s;
   cursor: pointer;
@@ -48,13 +48,18 @@ article .back {
   transform: rotateY(180deg);
 }
 
+.back p {
+  font-size: 22px;
+  color: #b2b5c2;
+}
+
 article .material-symbols-outlined {
-  width: 72px;
-  height: 72px;
+  width: 76px;
+  height: 76px;
   border-radius: 50%;
   display: grid;
   place-items: center;
-  font-size: 34px;
+  font-size: 40px;
 }
 
 input {
@@ -83,36 +88,26 @@ article h3 {
   color: #b2b5c2;
 }
 
-#summary {
+#sent {
   color: #643fe1;
 }
 
-#summary span {
+#sent span {
   background: #edebfb;
 }
 
-#overdue {
+#leads {
   color: #b02ce1;
 }
 
-#overdue span {
+#leads span {
   background: #f7e8ff;
 }
 
-#features {
+#convos {
   color: #3ac2f0;
 }
 
-#features span {
+#convos span {
   background: #eef9ff;
-}
-
-article :is(h4, p) {
-  opacity: 0.5;
-  font-size: 20px;
-}
-
-article p {
-  margin: 0;
-  color: #020306;
 }
