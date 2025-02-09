@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #117bd5;
+}
+
+@keyframes move {
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+  padding: 0 24px;
+  background-color: #0a1d32;
+  background-image: url("bg.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 60% 50%;
+  font-family: "Euclid Circular A";
+  color: #f9f9f9;
+  animation: move 20s alternate infinite linear;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 30%);
+}
+
+.card {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  margin: 0 20px;
+  padding: 100px 30px 64px;
+  border-radius: 20px;
+  background: rgb(0 0 0 / 16%);
+  backdrop-filter: blur(56px);
+  text-align: center;
+}
+
+.card > h2 {
+  font-size: 36px;
+  font-weight: 400;
+  margin: 0 0 12px;
+}
+
+.card > h3 {
+  color: rgb(255 255 255 / 38%);
+  margin: 0 0 78px;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+.form {
+  width: 100%;
+  margin: 0;
+  display: grid;
+  gap: 18px;
+}
+
+.form :is(input, button) {
+  width: 100%;
+  height: 64px;
+  border-radius: 6px;
+  border: 0;
+  padding: 0 20px;
+  font-size: 18px;
+  font-family: inherit;
+}
+
+.form > input {
+  color: rgb(255 255 255 / 96%);
+  background: rgb(31 65 102 / 50%);
+  outline: none;
+}
+
+.form > input::placeholder {
+  color: rgb(255 255 255 / 38%);
+}
+
+.form > button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: var(--color-primary);
+  color: #f9f9f9;
+  border: 0;
+  font-family: inherit;
+  font-weight: 400;
+  text-align: center;
+  transition: all 0.375s;
+}
+
+@media (width >= 448px) {
+  .card {
+    margin: 0;
+    width: 70%;
+    min-width: 400px;
+  }
+}
+
+@media (width >= 500px) {
+  body {
+    padding: 0;
+  }
+}
+
+@media (width >= 628px) {
+  .card {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 44px;
+    width: 50%;
+    max-width: 500px;
+    min-width: auto;
+    display: flex;
+    border-radius: 0;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .card > h3 {
+    margin: 0 0 48px;
+  }
+}
