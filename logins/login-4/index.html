@@ -8,18 +8,30 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="background"></div>
     <div class="card">
       <img class="logo" src="logo.svg" />
-      <h2>Welcome Back</h2>
+      <h2>Sign In</h2>
+      <h3>Let's make crypto!</h3>
       <form class="form">
-        <input type="email" placeholder="Username" />
-        <input type="password" placeholder="Password" />
+        <div class="textbox">
+          <span class="material-symbols-outlined"> account_circle </span>
+          <input type="email" placeholder="Username" />
+        </div>
+        <div class="textbox">
+          <span class="material-symbols-outlined"> lock </span>
+          <input type="password" placeholder="Password" />
+        </div>
         <button>Sign In</button>
       </form>
+      <a>Forgot password?</a>
       <footer>
         Need an account? Sign up
         <a href="#">here</a>
