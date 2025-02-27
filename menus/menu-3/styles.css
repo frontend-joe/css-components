@@ -1,0 +1,236 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Euclid Circular A", Poppins;
+  color: #f9f9f9;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 20% 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgb(0 0 0 / 100%), rgb(0 0 0 / 0%));
+}
+
+button {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.burger,
+.menu {
+  position: fixed;
+}
+
+.burger {
+  z-index: 3;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+  background-image: url("menu.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+body.open .burger {
+  background-image: url("close.svg");
+}
+
+.menu {
+  z-index: 2;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 50%;
+  max-width: 400px;
+  height: 100%;
+  background: rgb(0 0 0 / 40%);
+  backdrop-filter: blur(10px);
+  translate: -100% 0;
+  transition: translate 0.425s cubic-bezier(0.175, 0.885, 0.32, 1);
+}
+
+.menu nav {
+  opacity: 0;
+}
+
+@keyframes menu-in {
+  0% {
+    clip-path: ellipse(0% 0% at 0% 50%);
+  }
+  100% {
+    clip-path: ellipse(120% 120% at 0% 50%);
+  }
+}
+
+body.open .menu {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+  animation: menu-in 0.425s;
+}
+
+body.open .menu nav {
+  opacity: 1;
+}
+
+.menu nav:hover a {
+  opacity: 0.25;
+}
+
+.menu nav a:hover {
+  opacity: 1;
+}
+
+.menu nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 60%;
+}
+
+.menu a {
+  position: relative;
+  color: #f9f9f9;
+  font-size: 30px;
+  font-family: "Euclid Circular A";
+  padding: 18px 0;
+  height: 80px;
+  width: 100%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.menu a::before,
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+  transition: 0.4s;
+}
+
+.menu a::before {
+  opacity: 0;
+  background: rgb(255 255 255 / 20%);
+}
+
+.menu a::after {
+  transform: scaleX(0);
+  transform-origin: 0% 50%;
+  background: #f7f7f7;
+}
+
+.menu a:hover::before {
+  opacity: 1;
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+}
+
+body.open .menu a {
+  animation: appear 0.25s backwards;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    translate: -30px 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.burger-icon {
+  position: relative;
+  width: 32px;
+  border: 0;
+  scale: 1.2;
+  opacity: 0.5;
+}
+
+.burger:hover .burger-icon {
+  opacity: 1;
+}
+
+.burger-icon,
+.burger-icon::before,
+.burger-icon::after {
+  display: block;
+  border-radius: 2px;
+  height: 2px;
+  background: #f9f9f9;
+  transition: 0.3s;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+}
+
+.burger-icon::before {
+  top: -8px;
+}
+
+.burger-icon::after {
+  top: 8px;
+}
+
+.burger-icon,
+.burger-icon::before,
+.burger-icon::after {
+  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+}
+
+.burger-icon::before,
+.burger-icon::after {
+  width: 16px;
+}
+
+.burger-icon::before {
+  left: 0;
+  transform-origin: 100% 0%;
+}
+
+.burger-icon::after {
+  left: 16px;
+  transform-origin: 0% 100%;
+}
+
+body.open .burger-icon {
+  transform: rotate(-45deg);
+}
+
+body.open .burger-icon::before {
+  transform: rotate(90deg) translate(10px, -1px);
+}
+
+body.open .burger-icon::after {
+  transform: rotate(90deg) translate(-9px, 1px);
+  width: 16px;
+}
