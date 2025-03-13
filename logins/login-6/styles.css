@@ -1,0 +1,173 @@
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+  background: #1e142c;
+  font-family: "Euclid Circular A", "Poppins";
+  color: #f9f8fa;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #a240ff;
+  --color-muted: #a392b3;
+}
+
+.background {
+  position: fixed;
+  z-index: -1;
+  top: 70%;
+  left: 50%;
+  right: 0;
+  bottom: -70vh;
+  translate: -50% 0;
+  width: 150vw;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(3) scaleX(2.25);
+  transform-origin: bottom;
+  box-sizing: border-box;
+  display: block;
+  pointer-events: none;
+}
+
+.login {
+  position: relative;
+  z-index: 2;
+  background: rgb(6 5 7 / 25%);
+  backdrop-filter: blur(38px);
+  box-shadow: 0 40px 30px rgb(0 0 0 / 10%);
+  border-radius: 40px;
+  padding: 72px 32px 58px;
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.login img {
+  width: 74px;
+  margin: 0 0 32px;
+}
+
+.login :is(h2, h3) {
+  font-weight: 500;
+}
+
+.login h2 {
+  font-size: 24px;
+  margin: 0 0 6px;
+}
+
+.login h3 {
+  color: var(--color-muted);
+  font-size: 12px;
+  margin: 0 0 56px;
+}
+
+.login form {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 32px;
+}
+
+.login :is(input, button) {
+  height: 56px;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0 16px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.login .textbox {
+  position: relative;
+}
+
+label,
+input {
+  transition: 0.3s;
+}
+
+.textbox label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  translate: 0 -50%;
+  transform-origin: 0 50%;
+  pointer-events: none;
+  color: var(--color-muted);
+}
+
+.textbox input {
+  width: 100%;
+  padding-top: 10px;
+  background: #251930;
+  outline: none;
+  color: inherit;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+.textbox input:focus {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.textbox input:is(:focus, :not(:invalid)) ~ label {
+  scale: 0.725;
+  translate: 0 -112%;
+}
+
+.login button {
+  position: relative;
+  color: #f9f9f9;
+  font-size: 17px;
+  background: var(--color-primary);
+  cursor: pointer;
+}
+
+.login :is(button span, button p) {
+  transition: 0.3s;
+}
+
+.login button span {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  translate: 10px -50%;
+  opacity: 0;
+  font-size: 22px;
+}
+
+.login button:hover p {
+  translate: -10px 0;
+}
+
+.login button:hover span {
+  opacity: 1;
+  translate: 20px -50%;
+}
+
+.login a {
+  font-size: 15px;
+  color: var(--color-primary);
+}
+
+.login > p {
+  margin: 56px 0 0;
+  font-size: 15px;
+  color: var(--color-muted);
+}

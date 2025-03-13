@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation 1</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background">
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="100%"
+        height="100%"
+        viewBox="0 0 1600 900"
+      >
+        <defs>
+          <path
+            id="wave"
+            fill="rgba(120, 28, 207, 0.6)"
+            d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+      s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"
+          />
+        </defs>
+        <g>
+          <use xlink:href="#wave" opacity=".4">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="8s"
+              calcMode="spline"
+              values="270 230; -334 180; 270 230"
+              keyTimes="0; .5; 1"
+              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+              repeatCount="indefinite"
+            />
+          </use>
+          <use xlink:href="#wave" opacity=".6">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="6s"
+              calcMode="spline"
+              values="-270 230;243 220;-270 230"
+              keyTimes="0; .6; 1"
+              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+              repeatCount="indefinite"
+            />
+          </use>
+          <use xlink:href="#wave" opacty=".9">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="4s"
+              calcMode="spline"
+              values="0 230;-140 200;0 230"
+              keyTimes="0; .4; 1"
+              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+              repeatCount="indefinite"
+            />
+          </use>
+        </g>
+      </svg>
+    </div>
+    <div class="login">
+      <img src="logo.svg" />
+      <h2>Welcome to Jolt</h2>
+      <h3>Lightning quick development!</h3>
+      <form class="form">
+        <div class="textbox">
+          <input required type="text" />
+          <label>Email</label>
+        </div>
+        <div class="textbox">
+          <input required type="password" />
+          <label>Password</label>
+        </div>
+        <button type="submit">
+          <p>Login</p>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </form>
+      <a>Forgot password?</a>
+      <p class="footer">Not a member yet? <a>Sign up!</a></p>
+    </div>
+  </body>
+</html>
