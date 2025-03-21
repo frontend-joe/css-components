@@ -1,0 +1,210 @@
+:root {
+  --color-bg: #eff3f7;
+  --color-primary: #3a8ef9;
+  --color-text: #20262e;
+}
+
+body {
+  background: #eff3f7;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Euclid Circular A", "Poppins";
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: relative;
+  background: #ffffff;
+  width: 240px;
+  height: 72px;
+  padding: 0 10px 6px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 0 20px 50px rgb(0 0 0 / 4%);
+}
+
+.navbar-cutout {
+  z-index: 1;
+  inset: 0;
+  top: -46px;
+  width: 70px;
+  height: 70px;
+  border-bottom-right-radius: 35px;
+  border-bottom-left-radius: 35px;
+  background: var(--color-bg);
+}
+
+.navbar-marker {
+  top: 0;
+  left: 10px;
+  width: 20px;
+  height: 4px;
+  background: var(--color-text);
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  transition: 0.3s;
+}
+
+.navbar button {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.navbar > button {
+  opacity: 0.5;
+  transition: 0.3s;
+  display: grid;
+  height: 48px;
+  width: 60px;
+  place-items: center;
+}
+
+.navbar > button:focus {
+  opacity: 1;
+}
+
+.navbar > button:nth-child(1):focus ~ .navbar-marker {
+  translate: 10px;
+}
+
+.navbar > button:nth-child(2):focus ~ .navbar-marker {
+  translate: 50px;
+}
+
+.navbar > button:nth-child(3):focus ~ .navbar-marker {
+  translate: 148px;
+}
+
+.navbar > button:nth-child(4):focus ~ .navbar-marker {
+  translate: 190px;
+}
+
+.navbar::after {
+  content: "";
+  bottom: 8px;
+  left: 50%;
+  width: 44%;
+  height: 4px;
+  border-radius: 4px;
+  translate: -50% 0;
+  background: var(--color-bg);
+}
+
+.navbar > button:nth-child(2) {
+  margin-right: 56px;
+}
+
+.fab > button > i {
+  font-size: 28px;
+}
+
+.navbar > button > i {
+  color: var(--color-text);
+}
+
+i.lni {
+  font-size: 24px;
+  transition: 0.2s;
+}
+
+.navbar-cutout,
+.navbar-marker,
+.navbar::after,
+.fab,
+.menu,
+.menu::after {
+  position: absolute;
+}
+
+.navbar-cutout,
+.fab,
+.menu,
+.menu::after {
+  left: 50%;
+  translate: -50% 0;
+}
+
+.fab {
+  z-index: 2;
+  top: -44px;
+}
+
+.fab button {
+  color: #f9f9f9;
+}
+
+.fab > button {
+  position: relative;
+  z-index: 2;
+  background: var(--color-primary);
+  width: 56px;
+  height: 56px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border-radius: 50%;
+  box-shadow: 0 6px 16px rgb(8 117 255 / 34%);
+}
+
+.fab > button:hover > i {
+  rotate: 45deg;
+}
+
+.menu {
+  z-index: 1;
+  top: -46px;
+  opacity: 1;
+  width: 160px;
+  height: 80px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 20px;
+}
+
+.menu::after {
+  content: "";
+  top: 0;
+  left: 50%;
+  border-radius: 50%;
+  border: 80px solid transparent;
+  border-bottom-color: var(--color-primary);
+  border-left-color: var(--color-primary);
+  pointer-events: none;
+  transform-origin: 50% 50%;
+  rotate: -45deg;
+  transition: 0.6s ease;
+}
+
+.menu > button {
+  position: relative;
+  z-index: 2;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.menu > button:nth-child(2) {
+  translate: 0 -20px;
+}
+
+.fab > button:hover ~ .menu {
+  opacity: 1;
+}
+
+.fab > :is(button:hover, .menu:hover) ~ .menu::after {
+  rotate: 135deg;
+}
+
+.fab > button:hover ~ .menu > button {
+  opacity: 1;
+}
