@@ -1,0 +1,178 @@
+body {
+  background: #ebf2f7;
+  color: #4d4a57;
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  font-family: "Euclid Circular A";
+}
+
+:root {
+  --color-muted: #9895a2;
+}
+
+.card {
+  position: relative;
+  border-radius: 24px;
+  width: 80vw;
+  padding-top: 30px;
+  background: #ffffff;
+  box-shadow: 0 50px 50px rgb(112 104 155 / 8%);
+}
+
+.card > img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  translate: -50% -50%;
+  width: 84px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 6px solid #ffffff;
+}
+
+.main {
+  padding: 24px 24px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 400;
+  margin: 0;
+}
+
+em {
+  font-style: normal;
+  color: #41a8e3;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: clamp(16px, 3.5vw, 20px);
+  color: var(--color-muted);
+}
+
+h4 {
+  font-weight: 500;
+  font-size: clamp(22px, 5vw, 26px);
+  margin-bottom: 6px;
+}
+
+h5 {
+  color: var(--color-muted);
+  font-size: clamp(14px, 3.5vw, 16px);
+  margin-bottom: 40px;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  margin-bottom: 20px;
+  font-size: clamp(14px, 3.5vw, 16px);
+}
+
+.salary em {
+  color: var(--color-muted);
+}
+
+.date {
+  color: var(--color-muted);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 24px;
+  border-top: 1px solid #e5e9ec;
+}
+
+.footer button {
+  background: transparent;
+  border: 1px solid #e5e9ec;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: inherit;
+}
+
+.footer button span {
+  font-size: 22px;
+}
+
+.badge {
+  display: inline-flex;
+  margin-right: auto;
+  align-items: center;
+  gap: 12px;
+  padding-right: 20px;
+  font-size: 14px;
+  border-radius: 50px;
+  background: #f6f9fa;
+}
+
+.badge .text {
+  display: none;
+}
+
+.badge img {
+  width: 40px;
+}
+
+.badge p {
+  color: var(--color-muted);
+}
+
+@media (width >= 430px) {
+  .card {
+    padding-top: 0;
+  }
+
+  .card > img {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    left: auto;
+    translate: 0;
+    width: clamp(68px, 10vw, 80px);
+
+    border-color: transparent;
+  }
+
+  .main {
+    text-align: left;
+  }
+
+  .badge .text {
+    display: inline;
+  }
+
+  h5 {
+    margin-bottom: 28px;
+  }
+}
+
+@media (width >= 540px) {
+  .card {
+    max-width: 500px;
+  }
+}
