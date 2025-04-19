@@ -1,0 +1,172 @@
+:root {
+  --color-text: #3c3849;
+  --color-muted: #adabb4;
+  --color-primary: #8a6bf1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #ebe8ff;
+  color: var(--color-text);
+  margin: 0;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: "Euclid Circular A", "Poppins";
+  overflow: hidden;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 30px;
+  width: 65%;
+  max-width: 800px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 580px 100px rgb(104 101 248 / 10%);
+}
+
+.image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 100%;
+  height: 280px;
+}
+
+.image > img {
+  position: absolute;
+  width: 100%;
+  height: 180%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+.content {
+  flex: 1 1 50%;
+  padding: 0 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.content > img {
+  height: 24px;
+  margin-top: 50px;
+  margin-bottom: 10px;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 18px;
+  margin: 0 0 40px;
+  color: var(--color-muted);
+}
+
+form {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+}
+
+label {
+  color: var(--color-muted);
+}
+
+input,
+button {
+  font-size: 16px;
+  font-family: inherit;
+  padding: 0 16px;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  border-radius: 8px;
+}
+
+.textbox {
+  position: relative;
+}
+
+label,
+input {
+  transition: 0.3s;
+}
+
+.textbox label {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  translate: 0 -50%;
+  transform-origin: 0 50%;
+  pointer-events: none;
+  color: var(--color-muted);
+}
+
+.textbox input {
+  padding-top: 10px;
+  background: #f6f6fb;
+  outline: none;
+  color: inherit;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+.textbox input:focus {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.textbox input:is(:focus, :not(:invalid)) ~ label {
+  scale: 0.725;
+  translate: 0 -112%;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-primary);
+  color: #f9f9f9;
+}
+
+.content > p {
+  margin-top: 30px;
+  color: var(--color-muted);
+}
+
+.content > p > a {
+  color: var(--color-primary);
+}
+
+@media (width >= 780px) {
+  .card {
+    width: 85%;
+    padding-right: 0;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .image {
+    width: 45%;
+    height: auto;
+    align-self: stretch;
+  }
+
+  .image > img {
+    height: 100%;
+  }
+
+  .content {
+    align-items: flex-start;
+    padding: 0 32px 20px;
+  }
+
+  .content > img {
+    margin-top: 60px;
+  }
+}
