@@ -1,0 +1,186 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: #ffe7ce;
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+:root {
+  --color-muted: #a4a4a4;
+  --color-text: #2b2d29;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgb(0 0 0 / 8%);
+  border-radius: 36px;
+  padding: 8px;
+  width: 75vw;
+}
+
+.image {
+  position: absolute;
+  inset: 8px;
+  width: calc(100% - 16px);
+  height: calc(100% - 16px);
+  object-fit: cover;
+  border-radius: 28px;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  align-self: stretch;
+  padding: 200px 32px 32px;
+  border-radius: inherit;
+  background: linear-gradient(rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 50%) 50%);
+  color: #f9f9f9;
+}
+
+h2,
+h3 {
+  font-weight: 400;
+}
+
+h2 {
+  margin-bottom: 0;
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 0 0 20px;
+  color: var(--color-muted);
+}
+
+p {
+  color: var(--color-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.read-more {
+  font-size: 14px;
+  display: block;
+  margin: 6px 0 18px;
+}
+
+.details {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.item {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.item .material-symbols-outlined {
+  font-size: 18px;
+  color: var(--color-muted);
+}
+
+em {
+  font-style: normal;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.primary-btn {
+  width: 100%;
+  border: 0;
+  background: #ffffff;
+  color: var(--color-text);
+  font-family: inherit;
+  border-radius: 32px;
+  padding: 0 24px;
+  height: 48px;
+  font-size: 15px;
+}
+
+.icon-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: 0;
+  color: #f9f9f9;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  height: 48px;
+  width: 48px;
+  background: rgb(255 255 255 / 10%);
+}
+
+@media (width >= 480px) {
+  .icon-btn {
+    position: static;
+    min-width: 48px;
+  }
+}
+
+@media (width >= 640px) {
+  .icon-btn {
+    min-width: 48px;
+    background: rgb(0 0 0 / 4%);
+    color: var(--color-text);
+  }
+
+  p {
+    white-space: inherit;
+    margin-bottom: 24px;
+  }
+
+  .read-more {
+    display: none;
+  }
+
+  .card {
+    max-width: 700px;
+    padding: 24px 16px;
+    flex-direction: row;
+  }
+
+  .image {
+    position: static;
+    height: 360px;
+    width: 50%;
+    min-width: 50%;
+    margin-left: -56px;
+    align-self: stretch;
+    box-shadow: 0 20px 50px rgb(0 0 0 / 8%);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1 1 auto;
+    background: transparent;
+    color: var(--color-text);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .primary-btn {
+    background: var(--color-text);
+    color: #f9f9f9;
+    max-width: 70%;
+  }
+}
