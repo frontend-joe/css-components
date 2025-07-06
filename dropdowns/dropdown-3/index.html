@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dropdowns</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="dropdown">
+      <button>
+        <span class="material-symbols-outlined"> account_circle </span>
+        Kim Wilson
+        <span class="material-symbols-outlined chevron"> expand_more </span>
+      </button>
+      <input type="checkbox" id="create" />
+      <input type="checkbox" id="settings" />
+      <div class="menu">
+        <div class="menu-inner">
+          <div class="main-menu">
+            <label for="create">
+              <span class="material-symbols-outlined"> add_box </span>
+              <p>Create</p>
+              <span class="material-symbols-outlined"> chevron_right </span>
+            </label>
+            <label for="settings">
+              <span class="material-symbols-outlined"> settings </span>
+              <p>Settings</p>
+              <span class="material-symbols-outlined"> chevron_right </span>
+            </label>
+          </div>
+          <div class="sub-menu create">
+            <label for="create">
+              <span class="material-symbols-outlined"> arrow_back </span>
+              <p>Create</p>
+            </label>
+            <button>
+              <span class="material-symbols-outlined"> folder </span>
+              <p>Document</p>
+            </button>
+            <button>
+              <span class="material-symbols-outlined"> article </span>
+              <p>Article</p>
+            </button>
+          </div>
+          <div class="sub-menu settings">
+            <label for="settings">
+              <span class="material-symbols-outlined"> arrow_back </span>
+              <p>Settings</p>
+            </label>
+            <button>
+              <span class="material-symbols-outlined"> storage </span>
+              <p>Storage</p>
+            </button>
+            <button>
+              <span class="material-symbols-outlined"> mouse </span>
+              <p>Accessory</p>
+            </button>
+            <button>
+              <span class="material-symbols-outlined"> headphones </span>
+              <p>Audio</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

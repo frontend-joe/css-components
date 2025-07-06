@@ -1,0 +1,146 @@
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: #e8dfff;
+  color: #645e74;
+  height: 100vh;
+  --color-menu: #2b2935;
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.dropdown {
+  translate: 0 -40px;
+  position: relative;
+}
+
+.dropdown input {
+  position: absolute;
+  scale: 0;
+}
+
+.dropdown button,
+.dropdown label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  width: 100%;
+  height: 64px;
+  color: inherit;
+  background: #ffffff;
+  border: 0;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: inherit;
+  transition: 0.3s ease;
+}
+
+.dropdown .menu :is(button, label) :is(p, span) {
+  position: relative;
+  z-index: 2;
+}
+
+.dropdown :is(button, label) {
+  position: relative;
+}
+
+.dropdown .menu :is(button, label)::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 4px;
+  right: 4px;
+  bottom: 0;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.dropdown label p {
+  flex: 1 1 auto;
+}
+
+.dropdown > button {
+  background: #8864f0;
+  border-radius: 10px;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.dropdown:hover > button .chevron {
+  rotate: -180deg;
+}
+
+.dropdown button .chevron {
+  margin-left: auto;
+  transition: 0.3s ease;
+}
+
+.dropdown .menu {
+  position: absolute;
+  overflow: hidden;
+  z-index: 1;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  height: 204px;
+  padding-top: 72px;
+  padding-bottom: 4px;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: 10px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+.dropdown .main-menu {
+  width: 200px;
+}
+
+.dropdown:hover .menu {
+  opacity: 1;
+  visibility: visible;
+}
+
+#create:checked ~ .menu {
+  height: 268px;
+}
+
+#create:checked ~ .menu .sub-menu.create {
+  display: block;
+}
+
+#settings:checked ~ .menu {
+  height: 332px;
+}
+
+#settings:checked ~ .menu .sub-menu.settings {
+  display: block;
+}
+
+.dropdown .menu-inner {
+  position: absolute;
+  width: 400px;
+  display: flex;
+  transition: 0.4s ease;
+}
+
+.dropdown input:checked ~ .menu .menu-inner {
+  translate: -50%;
+}
+
+.dropdown .menu :is(button, label):hover::before {
+  background: #f5f3fb;
+}
+
+.dropdown .sub-menu {
+  width: 200px;
+  display: none;
+}
