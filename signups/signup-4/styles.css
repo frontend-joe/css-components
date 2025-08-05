@@ -1,0 +1,208 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: #6e56b0;
+  color: #f9f9f9;
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+:root {
+  --color-primary: #8864f0;
+  --color-border: #686870;
+  --color-muted: #67666e;
+  --color-card: #292334;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-card);
+  border-radius: 22px;
+  padding: 6px;
+  width: clamp(300px, 85vw, 500px);
+  box-shadow: 0 50px 100px rgb(0 0 0 / 12%);
+}
+
+.hero,
+form {
+  flex: 1 1 50%;
+}
+
+h2,
+h3,
+p {
+  font-weight: 500;
+  margin: 0;
+}
+
+.hero {
+  background: url("hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.hero-inner {
+  background: linear-gradient(rgb(95 69 168 / 0%), rgb(95 69 168 / 60%));
+  padding: 40px 66px;
+  height: 100%;
+  min-height: 170px;
+}
+
+form {
+  padding: 30px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: padding 0.3s;
+}
+
+form :is(h2, h3) {
+  text-align: center;
+}
+
+form > h2 {
+  font-size: 22px;
+}
+
+form > h3 {
+  font-size: 14px;
+  margin-bottom: 12px;
+  color: var(--color-muted);
+}
+
+button,
+input {
+  height: 44px;
+  border-radius: 6px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  width: 100%;
+  outline-color: var(--color-primary);
+}
+
+input {
+  background: #3c364c;
+  padding: 0 2.5vw;
+}
+
+input::placeholder {
+  color: #7f7990;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  font-size: 15px;
+}
+
+.social-btn > img {
+  height: 24px;
+}
+
+.social-btn:first-child > img {
+  height: 20px;
+}
+
+form > button[type="submit"] {
+  color: #ffffff;
+  background: var(--color-primary);
+  font-size: 17px;
+}
+
+.or {
+  position: relative;
+  text-align: center;
+  height: 24px;
+}
+
+.or::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  translate: 0 -50%;
+  height: 1px;
+  background: var(--color-border);
+  opacity: 0.6;
+}
+
+.or::after {
+  content: "Or";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 1;
+  background: var(--color-card);
+  color: var(--color-muted);
+  font-size: 12px;
+  padding: 0 12px;
+}
+
+@media (width >= 485px) {
+  form {
+    padding-inline: 50px;
+  }
+
+  .extra-text {
+    display: inline;
+  }
+}
+
+@media (width >= 500px) {
+  form {
+    transition: none;
+  }
+}
+
+@media (width >= 580px) {
+  .card {
+    flex-direction: row;
+    padding: 6px 0 6px 6px;
+    width: clamp(300px, 90vw, 740px);
+  }
+
+  form :is(h2, h3) {
+    text-align: left;
+  }
+
+  .hero {
+    flex: 1 1 40%;
+    width: 50%;
+  }
+
+  form {
+    padding: 60px 30px;
+  }
+}
+
+@media (width >= 700px) {
+  .hero {
+    flex: 1 1 50%;
+    width: 50%;
+  }
+}
