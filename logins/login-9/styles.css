@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: #8a79e2;
+  --color-muted: #ada5b4;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(#181624, #000000);
+  color: #ffffff;
+  font-family: "Euclid Circular A", "Poppins";
+}
+
+.blob,
+.orbit {
+  position: fixed;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+.blob {
+  width: 85vw;
+  max-width: 550px;
+  opacity: 0.25;
+  aspect-ratio: 1 / 1;
+}
+
+@keyframes spin {
+  100% {
+    rotate: 1turn;
+  }
+}
+
+.orbit {
+  width: 95vw;
+  max-width: 720px;
+  aspect-ratio: 1 / 1;
+  border: 2px solid rgb(255 255 255 / 5%);
+  border-radius: 50%;
+  animation: spin 50s infinite linear;
+}
+
+.orbit::before,
+.orbit::after {
+  content: "";
+  position: absolute;
+  width: 24px;
+  aspect-ratio: 1 / 1;
+  border-radius: inherit;
+  background: #a0cac7;
+}
+
+.orbit::before {
+  top: 50%;
+  width: 18px;
+  left: -9px;
+}
+
+.orbit::after {
+  top: 50%;
+  right: -12px;
+}
+
+.login {
+  position: relative;
+  z-index: 2;
+  background: rgb(0 0 0 / 10%);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 72px 32px 48px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px solid rgb(255 255 255 / 10%);
+}
+
+.login img {
+  width: 108px;
+  margin: 0 0 42px;
+}
+
+.login :is(h2, h3) {
+  font-weight: 500;
+}
+
+.login h2 {
+  font-size: 18px;
+  margin: 0 0 6px;
+}
+
+.login h3 {
+  color: var(--color-muted);
+  font-size: 13px;
+  margin: 0 0 42px;
+}
+
+.login form {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+.login :is(input, button) {
+  height: 52px;
+  font-family: inherit;
+  font-size: 15px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 6px;
+}
+
+.login .textbox {
+  position: relative;
+}
+
+label,
+input {
+  transition: 0.3s;
+}
+
+.textbox label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  translate: 0 -50%;
+  transform-origin: 0 50%;
+  pointer-events: none;
+  color: var(--color-muted);
+}
+
+.textbox input {
+  width: 100%;
+  padding-top: 10px;
+  background: rgb(255 255 255 / 4%);
+  outline: none;
+  color: inherit;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+.textbox input:focus {
+  box-shadow: 0 0 0 2px var(--color-primary);
+}
+
+.textbox input:is(:focus, :not(:invalid)) ~ label {
+  scale: 0.725;
+  translate: 0 -112%;
+}
+
+.login button {
+  color: #f9f9f9;
+  background: var(--color-primary);
+}
+
+.login a {
+  font-size: 14px;
+  color: var(--color-primary);
+}
+
+.login p {
+  margin: 48px 0 0;
+  font-size: 14px;
+  color: var(--color-muted);
+}
