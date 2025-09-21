@@ -19,21 +19,27 @@
         <span class="material-symbols-outlined"> settings </span>
       </div>
     </nav>
-    <header>Products</header>
+    <header>
+      <span class="material-symbols-outlined"> sell </span>Products
+    </header>
     <section>
       <aside class="filters">
         <h2>Filters</h2>
         <label>
           <input type="checkbox" />
-          Trainers
+          Bags
         </label>
         <label>
           <input type="checkbox" />
-          Tees
+          Shirts
         </label>
         <label>
           <input type="checkbox" />
-          Jeans
+          Jewellery
+        </label>
+        <label>
+          <input type="checkbox" />
+          Tech
         </label>
         <label>
           <input type="checkbox" />
@@ -43,129 +49,39 @@
           <input type="checkbox" />
           Socks
         </label>
+        <label>
+          <input type="checkbox" />
+          Underwear
+        </label>
+        <label>
+          <input type="checkbox" />
+          Jeans
+        </label>
       </aside>
-      <div class="grid">
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-        <div class="grid-item">
-          <div class="skeleton"></div>
-          <div style="width: 40px" class="skeleton"></div>
-        </div>
-      </div>
+      <div class="grid"></div>
     </section>
+    <script>
+      async function loadProducts() {
+        try {
+          const response = await fetch("https://fakestoreapi.com/products");
+          const products = await response.json();
+
+          const grid = document.querySelector(".grid");
+
+          products.forEach((product) => {
+            const gridItem = document.createElement("div");
+            gridItem.setAttribute("class", "grid-item");
+            gridItem.innerHTML = `
+            <img src="${product.image}" alt="${product.title}">
+          `;
+            grid.appendChild(gridItem);
+          });
+        } catch (error) {
+          console.error("Error loading products:", error);
+        }
+      }
+
+      loadProducts();
+    </script>
   </body>
 </html>

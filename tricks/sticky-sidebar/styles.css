@@ -5,9 +5,9 @@
 body {
   margin: 0;
   padding-top: 56px;
-  font-family: "Euclid Circular A";
-  background: #3f2d96;
-  color: #f9f9f9;
+  font-family: "SF Pro";
+  background: #ebebeb;
+  color: #59585d;
 }
 
 nav {
@@ -21,12 +21,11 @@ nav {
   left: 0;
   width: 100%;
   height: 56px;
-  color: #f9f9f9;
-  background: #6245e7;
+  background: #ffffff;
+  box-shadow: 0 0 40px rgb(0 0 0 / 12%);
 }
 
 nav span {
-  color: #f9f9f9;
   font-size: 22px;
 }
 
@@ -34,23 +33,30 @@ nav div {
   display: flex;
   gap: 8px;
   margin-left: auto;
+  opacity: 0.8;
 }
 
 section {
   display: flex;
-  background: #2b2a31;
+  background: #ffffff;
   padding: 20px 0;
 }
 
 header {
   display: flex;
   align-items: center;
+  gap: 8px;
   height: 120px;
   margin: 0;
   padding: 0 20px;
-  background: #3f2d96;
-  font-weight: 400;
   color: #f9f9f9;
+  background: #623bf0;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+header > .material-symbols-outlined {
+  font-size: 20px;
 }
 
 .filters {
@@ -63,7 +69,7 @@ header {
 }
 
 .filters h2 {
-  color: #7d7a7a;
+  opacity: 0.6;
   font-size: 14px;
   font-weight: 500;
   margin: 0 0 10px;
@@ -79,19 +85,26 @@ header {
 
 .filters input {
   margin: 0;
-  accent-color: #6245e7;
+  accent-color: #623bf0;
 }
 
 .grid {
   flex: 1 1 auto;
   display: grid;
-  gap: 10px;
+  gap: 16px;
   grid-template-columns: repeat(3, 1fr);
-  grid-auto-rows: 15vmax;
   padding-right: 20px;
 }
 
 .grid-item {
   padding: 20px;
-  background: #3d3c46;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgb(0 0 0 / 8%);
+}
+
+.grid-item img {
+  width: 100px;
+  height: 150px;
+  object-fit: contain;
 }
