@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #3e4144;
+  color: #adb0bc;
+  height: 100vh;
+  font-family: "Euclid Circular A";
+}
+
+.sidebar {
+  --color-primary: #4066ff;
+  position: fixed;
+  overflow: hidden;
+  top: 24px;
+  left: 24px;
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 80px;
+  border-radius: 18px;
+  transition: width 0.4s;
+}
+
+.left,
+.right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  transition: 0.4s;
+  border-radius: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.left {
+  z-index: 1;
+  left: 0;
+  width: 80px;
+  background: #151617;
+}
+
+.right {
+  left: 80px;
+  width: 220px;
+  background: #1d1f20;
+  translate: -100% 0;
+}
+
+.left img {
+  width: 40px;
+  margin: 34px 0 40px;
+}
+
+.sidebar button {
+  border: 0;
+  background: #353739;
+  font-size: 20px;
+  color: inherit;
+  border-radius: 8px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.left button {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 18px;
+  display: grid;
+  place-items: center;
+  background: #33363a;
+}
+
+.left button:nth-of-type(1) {
+  background: var(--color-primary);
+  color: #f9f9f9;
+}
+
+.left button:last-of-type {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.right h1 {
+  color: #f9f9f9;
+  letter-spacing: 2px;
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  margin: 42px 0 24px 58px;
+}
+
+.right h2 {
+  color: #a1a6b7;
+  font-size: 14px;
+  font-weight: 500;
+  width: 100%;
+  margin: 28px 0 18px 58px;
+  cursor: default;
+}
+
+.right .buttons {
+  display: grid;
+  width: 100%;
+  padding: 16px;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.right button {
+  padding: 8px 8px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.right button i {
+  background: #353739;
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  font-size: 22px;
+  display: grid;
+  place-items: center;
+}
+
+.right button:hover {
+  color: #f9f9f9;
+}
+
+.right button:hover i {
+  background: var(--color-primary);
+}
+
+.right button span {
+  font-size: 12px;
+}
+
+.sidebar:hover {
+  width: 300px;
+}
+
+.sidebar:hover .left {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.sidebar:hover .right {
+  translate: 0;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
