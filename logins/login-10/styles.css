@@ -1,0 +1,256 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: #dfdbfc;
+  color: #312e37;
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+:root {
+  --color-primary: #816ce0;
+  --color-muted: #b4b4b4;
+  --color-border: #a9a9a9;
+  --gradient: linear-gradient(45deg, #7386d8, #ac5df1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 6px;
+  width: 90vw;
+  max-width: 800px;
+  box-shadow: 0px 20px 54px rgba(126, 48, 255, 0.12);
+}
+
+.content {
+  padding: 32px;
+  width: 50%;
+}
+
+.hero {
+  width: 50%;
+  align-self: stretch;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: var(--gradient);
+}
+
+.logo-white {
+  height: 40px;
+  display: none;
+}
+
+.graphic {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.logo {
+  height: 28px;
+  margin-bottom: 40px;
+}
+
+h2,
+h3 {
+  margin: 0;
+}
+
+.content,
+.hero {
+  transition: width 0.3s;
+}
+
+.content > h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.content > h3 {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-muted);
+  margin-bottom: 40px;
+}
+
+.content > form {
+  padding: 0;
+}
+
+input,
+button {
+  font-size: 16px;
+  font-family: inherit;
+  display: block;
+  padding: 0 16px;
+  border-radius: 6px;
+  height: 48px;
+  outline-color: var(--color-primary);
+}
+
+form > input {
+  width: 100%;
+  margin-bottom: 10px;
+  color: inherit;
+  border: 1px solid var(--color-border);
+  background: transparent;
+}
+
+form > input::placeholder {
+  color: var(--color-muted);
+}
+
+form .row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+form a {
+  color: var(--color-muted);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  color: var(--color-muted);
+}
+
+.checkbox > input {
+  position: absolute;
+  scale: 0;
+}
+
+.check {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background: transparent;
+  border: 1px solid var(--color-border);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.checkbox > input:checked ~ .check {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+}
+
+.check::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -7px;
+  width: 4px;
+  height: 8px;
+  rotate: 45deg;
+  border-bottom: 2px solid #ffffff;
+  border-right: 2px solid #ffffff;
+}
+
+.checkbox:has(input:checked) {
+  color: #7e7e7e;
+}
+
+form > button {
+  color: #ffffff;
+  background: var(--color-primary);
+  border: 0;
+  padding: 0 48px;
+}
+
+p {
+  font-size: 14px;
+  margin-top: 30px;
+  color: var(--color-muted);
+}
+
+p a {
+  color: var(--color-primary);
+}
+
+@media (width <= 730px) {
+  .content {
+    width: 60%;
+  }
+
+  .hero {
+    width: 40%;
+  }
+}
+
+@media (width <= 590px) {
+  .content,
+  .hero {
+    transition: none;
+  }
+
+  .card {
+    padding: 24px 24px 0;
+    flex-direction: column-reverse;
+  }
+
+  .graphic {
+    display: none;
+  }
+
+  .hero {
+    width: 100%;
+    height: 160px;
+  }
+
+  .card h2 {
+    margin-bottom: 10px;
+  }
+
+  .card h3 {
+    margin: 0 0 24px;
+  }
+
+  .card form {
+    width: 100%;
+  }
+
+  .content {
+    padding-inline: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  form button {
+    width: 100%;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logo-white {
+    display: block;
+  }
+
+  .content > img {
+    height: 28px;
+  }
+}
