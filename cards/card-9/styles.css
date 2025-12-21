@@ -1,0 +1,148 @@
+body {
+  height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  background: #121519;
+  color: #f9f9f9;
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+:root {
+  --color-muted: #a4a4a4;
+  --color-text: #2b2d29;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.card {
+  background: #121519;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  border: 4px solid rgb(255 255 255 / 8%);
+}
+
+.card-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  height: 150px;
+  width: 200%;
+  background-image: linear-gradient(
+    180deg,
+    rgb(111, 0, 255),
+    rgb(255, 48, 255)
+  );
+  animation: rotate 3s linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  background: inherit;
+  inset: 5px;
+  border-radius: 15px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 0 12px;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid rgb(255 255 255 / 8%);
+  margin: 0 0 12px;
+}
+
+.header img {
+  height: 50px;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px 6px 6px;
+  border-radius: 6px;
+  background: rgb(255 255 255 / 8%);
+  font-size: 12px;
+  margin-left: 6px;
+}
+.badge > i {
+  font-size: 18px;
+}
+
+h2,
+h3 {
+  margin: 0;
+  font-weight: 400;
+}
+
+h2 {
+  font-size: 22px;
+}
+
+h3 {
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul button {
+  font-family: inherit;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 12px;
+  font-size: 16px;
+  background: transparent;
+  border: 0;
+  border-radius: 8px;
+  color: inherit;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+ul button:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+ul button i {
+  font-size: 22px;
+}
+
+ul li:last-child {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgb(255 255 255 / 8%);
+}
