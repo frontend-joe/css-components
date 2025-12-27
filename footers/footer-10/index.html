@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="background">
+      <svg
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        width="100%"
+        height="100%"
+        viewBox="0 0 1600 900"
+      >
+        <defs>
+          <path
+            id="wave"
+            fill="rgb(111 52 251 / 60%)"
+            d="M-363.852,502.589c0,0,236.988-41.997,505.475,0
+      s371.981,38.998,575.971,0s293.985-39.278,505.474,5.859s493.475,48.368,716.963-4.995v560.106H-363.852V502.589z"
+          />
+        </defs>
+        <g>
+          <use xlink:href="#wave" opacity=".4">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="8s"
+              calcMode="spline"
+              values="270 230; -334 180; 270 230"
+              keyTimes="0; .5; 1"
+              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+              repeatCount="indefinite"
+            />
+          </use>
+          <use xlink:href="#wave" opacity=".6">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="6s"
+              calcMode="spline"
+              values="-270 230;243 220;-270 230"
+              keyTimes="0; .6; 1"
+              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+              repeatCount="indefinite"
+            />
+          </use>
+          <use xlink:href="#wave" opacty=".9">
+            <animateTransform
+              attributeName="transform"
+              attributeType="XML"
+              type="translate"
+              dur="4s"
+              calcMode="spline"
+              values="0 230;-140 200;0 230"
+              keyTimes="0; .4; 1"
+              keySplines="0.42, 0, 0.58, 1.0;0.42, 0, 0.58, 1.0"
+              repeatCount="indefinite"
+            />
+          </use>
+        </g>
+      </svg>
+    </div>
+    <footer>
+      <div class="footer-inner">
+        <div class="top">
+          <div>
+            <h2>Are you ready?</h2>
+            <h3>100+ components to choose from</h3>
+          </div>
+          <button>Get started</button>
+        </div>
+        <div class="bottom">
+          <div class="logo-content">
+            <img class="logo" src="logo.svg" />
+            <div class="socials">
+              <a class="fa-brands fa-x-twitter"></a>
+              <a class="fa-brands fa-discord"></a>
+              <a class="fa-brands fa-telegram"></a>
+              <a class="fa-brands fa-linkedin"></a>
+              <a class="fa-brands fa-facebook"></a>
+            </div>
+          </div>
+          <nav>
+            <ul>
+              <li>
+                <h4>FLOW UI</h4>
+              </li>
+              <li>
+                <a>Components</a>
+              </li>
+              <li>
+                <a>Hooks</a>
+              </li>
+              <li>
+                <a>Utilities</a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <h4>PRODUCT</h4>
+              </li>
+              <li>
+                <a>Pricing</a>
+              </li>
+              <li>
+                <a>Questions</a>
+              </li>
+              <li>
+                <a>Blog</a>
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <h4>CONTACT</h4>
+              </li>
+              <li>
+                <a>Support</a>
+              </li>
+              <li>
+                <a>Conditions</a>
+              </li>
+              <li>
+                <a>Privacy</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
