@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Widget 2 (HTML + CSS)</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="widget-2-card">
+      <input type="radio" name="menu" id="tab-home" checked />
+      <input type="radio" name="menu" id="tab-security" />
+      <input type="radio" name="menu" id="tab-stacks" />
+      <input type="radio" name="menu" id="tab-settings" />
+
+      <div class="buttons">
+        <label for="tab-home">
+          <span class="material-symbols-outlined">lock</span>
+          Security
+        </label>
+
+        <label for="tab-security">
+          <span class="material-symbols-outlined">bolt</span>
+          Performance
+        </label>
+
+        <label for="tab-stacks">
+          <span class="material-symbols-outlined">settings</span>
+          Customization
+        </label>
+
+        <label for="tab-settings">
+          <span class="material-symbols-outlined">forum</span>
+          Support
+        </label>
+      </div>
+
+      <!-- CONTENT -->
+      <div class="wrapper">
+        <div class="content">
+          <div class="block">
+            <h2>Security</h2>
+            <p>
+              Your data is protected with end-to-end encryption and secure
+              storage practices. We monitor systems, apply updates, and follow
+              standards to keep information private and secure.
+            </p>
+          </div>
+
+          <div class="block">
+            <h2>Performance</h2>
+            <p>
+              The platform is optimized for speed and efficiency, delivering
+              fast load times and smooth interactions through lightweight
+              assets, caching, and infrastructure across all devices.
+            </p>
+          </div>
+
+          <div class="block">
+            <h2>Customization</h2>
+            <p>
+              Personalize the experience to match your workflow. Adjust layouts,
+              enable features, and configure preferences so the interface feels
+              intuitive and aligned with how you work.
+            </p>
+          </div>
+
+          <div class="block">
+            <h2>Support</h2>
+            <p>
+              Our support team is here to help with questions, issues, and
+              guidance. We provide clear documentation and responsive assistance
+              to ensure a smooth and reliable experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

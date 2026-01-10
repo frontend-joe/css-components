@@ -1,0 +1,147 @@
+:root {
+  --widget-2-color-primary: #5b4aff;
+  --widget-2-sidebar-width: 136px;
+  --widget-2-menu-height: 184px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* RESET RADIO BUTTONS */
+input[type="radio"] {
+  display: none;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  font-family: "Euclid Circular A", "Poppins";
+  background: #a3afeb;
+  color: #9a98ab;
+}
+
+.widget-2-card {
+  display: flex;
+  padding: 0 12px;
+  width: 440px;
+  height: var(--widget-2-menu-height);
+  border-radius: 10px;
+  background: #1f2027;
+}
+
+/* SIDEBAR */
+.buttons {
+  padding-top: 12px;
+  width: var(--widget-2-sidebar-width);
+}
+
+.buttons label {
+  font-size: 12px;
+  width: 100%;
+  height: 40px;
+  padding-left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.75;
+  transition: opacity 0.3s;
+}
+
+.buttons label:hover {
+  opacity: 1;
+  color: #f9f9f9;
+  background: rgb(255 255 255 / 3%);
+}
+
+.buttons span {
+  font-size: 16px;
+}
+
+/* ACTIVE STATES */
+#tab-home:checked ~ .buttons label[for="tab-home"],
+#tab-security:checked ~ .buttons label[for="tab-security"],
+#tab-stacks:checked ~ .buttons label[for="tab-stacks"],
+#tab-settings:checked ~ .buttons label[for="tab-settings"] {
+  background: var(--widget-2-color-primary);
+  color: #fff;
+  opacity: 1;
+}
+
+/* CONTENT WRAPPER */
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+}
+
+.wrapper::before,
+.wrapper::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  width: 100%;
+  height: 36px;
+}
+
+.wrapper::before {
+  top: 0;
+  background: linear-gradient(#1f2027, transparent);
+}
+
+.wrapper::after {
+  bottom: 0;
+  background: linear-gradient(transparent, #1f2027);
+}
+
+/* SLIDING CONTENT */
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.6s;
+}
+
+/* TRANSLATION BASED ON RADIO STATE */
+#tab-home:checked ~ .wrapper .content {
+  transform: translateY(0);
+}
+
+#tab-security:checked ~ .wrapper .content {
+  transform: translateY(calc(-1 * var(--widget-2-menu-height)));
+}
+
+#tab-stacks:checked ~ .wrapper .content {
+  transform: translateY(calc(-2 * var(--widget-2-menu-height)));
+}
+
+#tab-settings:checked ~ .wrapper .content {
+  transform: translateY(calc(-3 * var(--widget-2-menu-height)));
+}
+
+/* BLOCKS */
+.block {
+  height: var(--widget-2-menu-height);
+  padding: 0 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.block h2 {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #f9f9f9;
+}
+
+.block p {
+  font-size: 13px;
+  line-height: 1.6;
+}
