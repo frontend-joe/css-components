@@ -1,0 +1,173 @@
+body {
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.footers-wrapper {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  gap: 10vw;
+  text-align: left;
+  background: #edf0f8;
+  color: #383977;
+  padding: 24px;
+  margin: 24px 32px;
+  border-radius: 8px;
+}
+
+article h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+}
+
+article h3 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+article p {
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+article p a {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.subscribe {
+  position: relative;
+}
+
+input,
+button {
+  border: 0;
+  font-family: inherit;
+}
+
+.subscribe input {
+  width: 100%;
+  border: 0;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: 8px;
+}
+
+.subscribe input::placeholder {
+  color: #a2a3c1;
+}
+
+.subscribe button {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  bottom: 4px;
+  padding: 0 8px;
+  width: 32px;
+  height: 32px;
+  background: #4042dd;
+  color: #ffffff;
+  border-radius: 8px;
+}
+
+.subscribe button span {
+  font-size: 18px;
+}
+
+footer {
+  padding: 44px 40px 0;
+  display: grid;
+  place-content: center;
+  background: linear-gradient(90deg, #2e31a7, #4042dd);
+  grid-template-areas:
+    "logo socials"
+    "links links";
+  grid-template-columns: repeat(2, 1fr);
+  color: #f9f9f9;
+}
+
+.logo {
+  grid-area: logo;
+  height: 17px;
+}
+
+.socials {
+  grid-area: socials;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  font-size: 18px;
+}
+
+.links {
+  grid-area: links;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 40px 0 50px;
+}
+
+.links h2 {
+  font-size: 13px;
+  font-weight: 400;
+  color: #b6bdce;
+}
+
+.links ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+.links address {
+  font-style: normal;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+@media (width < 500px) {
+  article {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .subscribe {
+    width: 50vw;
+    margin: 0 auto;
+  }
+
+  footer {
+    padding-bottom: 24px;
+  }
+
+  .links {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 0;
+    padding: 40px 0 30px;
+  }
+}
