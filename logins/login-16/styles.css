@@ -1,0 +1,189 @@
+body {
+  display: grid;
+  place-items: center;
+  margin: 0;
+  height: 100vh;
+  background: #26203b;
+  font-family: "Euclid Circular B", "Poppins";
+  color: #f9f8fa;
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-primary: rgb(255 255 255 / 50%);
+  --color-muted: rgb(255 255 255 / 30%);
+}
+
+.background {
+  position: absolute;
+  z-index: -1;
+  left: 50%;
+  translate: -50% 0;
+  bottom: -50px;
+  height: 80px;
+}
+
+svg {
+  width: 100vh;
+  height: 100vh;
+  transform: scaleY(3) scaleX(2.25);
+  transform-origin: bottom;
+  display: block;
+  pointer-events: none;
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  width: 380px;
+  padding: 72px 32px 58px;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(#1c182b, #2d2546);
+  backdrop-filter: blur(38px);
+  box-shadow: 0 40px 30px rgb(0 0 0 / 10%);
+}
+
+.card img.logo {
+  width: 94px;
+  margin: 24px 0 64px;
+}
+
+.card h2,
+.card h3 {
+  font-weight: 500;
+}
+
+.card h2 {
+  font-size: 24px;
+  margin: 0 0 6px;
+}
+
+.card h3 {
+  font-size: 12px;
+  margin: 0 0 56px;
+  color: var(--color-muted);
+}
+
+.card form {
+  display: grid;
+  gap: 18px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+input,
+button {
+  height: 56px;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 0 16px;
+  border: 0;
+}
+
+.textbox {
+  position: relative;
+}
+
+label,
+input {
+  transition: 0.3s;
+}
+
+.textbox img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  translate: 0 -50%;
+  height: 26px;
+}
+
+.textbox label {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  translate: 0 -50%;
+  transform-origin: 0 50%;
+  pointer-events: none;
+  color: var(--color-muted);
+}
+
+.textbox input {
+  width: 100%;
+  padding-left: 32px;
+  background: transparent;
+  border-bottom: 1px solid rgb(255 255 255 / 10%);
+  outline: none;
+  color: inherit;
+  box-shadow: 0 0 0 2px transparent;
+}
+
+.textbox input:focus {
+  border-color: var(--color-primary);
+}
+
+.textbox input:is(:focus, :not(:invalid)) ~ label {
+  scale: 0.725;
+  translate: -28px -38px;
+  color: var(--color-primary);
+}
+
+.card button {
+  position: relative;
+  font-size: 17px;
+  color: #f9f9f9;
+  background: rgb(255 255 255 / 6%);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button span,
+button p {
+  transition: 0.3s;
+}
+
+button span {
+  position: absolute;
+  top: 52%;
+  left: 50%;
+  translate: 10px -50%;
+  opacity: 0;
+  font-size: 22px;
+}
+
+button:hover {
+  background: rgb(255 255 255 / 9%);
+}
+
+button:hover p {
+  translate: -10px 0;
+}
+
+button:hover span {
+  opacity: 1;
+  translate: 20px -50%;
+}
+
+.card a {
+  color: rgb(255 255 255 / 70%);
+  margin-bottom: 12px;
+}
+
+.card > p {
+  margin: 56px 24px 0;
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.card p a {
+  color: rgb(255 255 255 / 60%);
+}
