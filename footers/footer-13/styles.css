@@ -28,6 +28,10 @@ footer {
   background: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 100%));
 }
 
+.container {
+  margin: 0 auto;
+}
+
 .logo {
   position: absolute;
   top: 280px;
@@ -164,6 +168,10 @@ ul {
 @media (width >= 590px) {
   body {
     background-size: cover;
+  }
+
+  .container {
+    max-width: 800px;
   }
 
   .bottom {
