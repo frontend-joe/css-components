@@ -1,0 +1,339 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #8960e2;
+  --accent-dark: #8960e2;
+  --gradient: linear-gradient(135deg, #8960e2 0%, #3ba2fb 100%);
+  --shadow-tint: rgba(124, 92, 191, 0.16);
+  --bg: #f1f2ff;
+  --surface: #ffffff;
+  --text: #3c4566;
+  --input-bg: #edf0f8;
+  --input-border: #dde1f0;
+  --easing: cubic-bezier(0.16, 1, 0.3, 1);
+  --easing-panel: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration: 0.6s;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: "Euclid Circular A", "Poppins", sans-serif;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 660px;
+  height: 440px;
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow:
+    0 20px 80px var(--shadow-tint),
+    0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.toggle {
+  display: none;
+}
+
+.card-bg {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  background: var(--gradient);
+  translate: 0 0;
+  transition: translate var(--duration) var(--easing-panel);
+  will-change: transform;
+}
+
+.toggle:checked ~ .card-bg {
+  translate: 100% 0;
+}
+
+.hero,
+.form {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity var(--duration) var(--easing-panel),
+    visibility var(--duration) var(--easing-panel),
+    translate var(--duration) var(--easing-panel);
+}
+
+/* --- default (unchecked) = signup active --- */
+
+.hero.signup {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+}
+
+.hero.signin {
+  left: 50%;
+  translate: 25% 0;
+}
+
+.form.signup {
+  left: 50%;
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+}
+
+.form.signin {
+  translate: 50% 0;
+}
+
+/* --- checked = signin active --- */
+
+.toggle:checked ~ .hero.signup {
+  opacity: 0;
+  visibility: hidden;
+  translate: -25% 0;
+}
+
+.toggle:checked ~ .hero.signin {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+}
+
+.toggle:checked ~ .form.signup {
+  opacity: 0;
+  visibility: hidden;
+  translate: -50% 0;
+}
+
+.toggle:checked ~ .form.signin {
+  opacity: 1;
+  visibility: visible;
+  translate: 0;
+}
+
+/* --- hero styles --- */
+
+.hero {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: 50%;
+  color: #f9f9f9;
+  text-align: center;
+  padding: 0 28px;
+}
+
+h2 {
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
+
+.hero p {
+  margin: 0 0 6px;
+  opacity: 0.78;
+  line-height: 1.55;
+  font-size: 14px;
+}
+
+.hero label {
+  padding: 11px 40px;
+  border-radius: 32px;
+  letter-spacing: 0.08em;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  color: inherit;
+  border: 1.5px solid rgba(249, 249, 249, 0.65);
+  background: transparent;
+  transition:
+    color 0.25s var(--easing),
+    background 0.25s var(--easing),
+    border-color 0.25s var(--easing),
+    transform 0.15s var(--easing);
+  cursor: pointer;
+}
+
+.hero label:hover {
+  color: var(--accent-dark);
+  background: #f9f9f9;
+  border-color: #f9f9f9;
+}
+
+.hero label:active {
+  transform: scale(0.97);
+}
+
+/* --- form styles --- */
+
+.form {
+  background: var(--surface);
+  z-index: 1;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 32px;
+}
+
+.form h2 {
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  text-align: center;
+}
+
+.sso {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.form form > a {
+  font-size: 13px;
+  margin-top: 8px;
+  opacity: 0.45;
+  transition: opacity 0.2s var(--easing);
+  cursor: pointer;
+}
+
+.form form > a:hover {
+  opacity: 0.75;
+}
+
+.sso a {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1.5px solid var(--input-border);
+  background: var(--input-bg);
+  font-size: 16px;
+  color: #9ca0b8;
+  transition:
+    border-color 0.2s var(--easing),
+    background 0.2s var(--easing),
+    color 0.2s var(--easing),
+    transform 0.18s var(--easing),
+    box-shadow 0.2s var(--easing);
+}
+
+.sso a:nth-child(1):hover {
+  border-color: #1877f2;
+  color: #1877f2;
+  background: rgba(24, 119, 242, 0.07);
+  box-shadow: 0 4px 14px rgba(24, 119, 242, 0.18);
+}
+
+.sso a:nth-child(2):hover {
+  border-color: #1da1f2;
+  color: #1da1f2;
+  background: rgba(29, 161, 242, 0.07);
+  box-shadow: 0 4px 14px rgba(29, 161, 242, 0.18);
+}
+
+.sso a:nth-child(3):hover {
+  border-color: #0a66c2;
+  color: #0a66c2;
+  background: rgba(10, 102, 194, 0.07);
+  box-shadow: 0 4px 14px rgba(10, 102, 194, 0.18);
+}
+
+.sso a:hover {
+  transform: translateY(-2px);
+}
+
+.sso a:active {
+  transform: translateY(0) scale(0.95);
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.form p {
+  margin: 0 0 -6px;
+  text-align: center;
+  opacity: 0.45;
+  font-size: 12px;
+  letter-spacing: 0.01em;
+}
+
+.form input {
+  font-family: inherit;
+  font-size: 14px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  background: var(--input-bg);
+  padding: 12px 14px;
+  color: var(--text);
+  width: 100%;
+  outline: none;
+  transition:
+    border-color 0.2s var(--easing),
+    background 0.2s var(--easing),
+    box-shadow 0.2s var(--easing);
+}
+
+.form input::placeholder {
+  color: #9ca0b8;
+}
+
+.form input:focus {
+  border-color: rgba(124, 92, 191, 0.4);
+  background: var(--surface);
+  box-shadow: 0 0 0 3px rgba(124, 92, 191, 0.08);
+}
+
+.form button {
+  border: 0;
+  padding: 13px 0;
+  border-radius: 32px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: #f9f9f9;
+  width: 160px;
+  margin-top: 8px;
+  background: var(--gradient);
+  box-shadow: 0 8px 32px rgba(100, 70, 180, 0.38);
+  cursor: pointer;
+  transition:
+    transform 0.15s var(--easing),
+    box-shadow 0.2s var(--easing);
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(100, 70, 180, 0.48);
+}
+
+.form button:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 16px rgba(100, 70, 180, 0.3);
+}
