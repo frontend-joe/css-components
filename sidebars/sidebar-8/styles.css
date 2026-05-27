@@ -1,0 +1,166 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #073e77;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30%;
+  height: 100vh;
+  font-family: "Euclid Circular A";
+}
+
+button,
+label {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 260px;
+  border-radius: 34px;
+  padding: 0 16px;
+  background: rgb(0 0 0 / 12%);
+  border: 3px solid rgb(255 255 255 / 12%);
+  backdrop-filter: blur(30px);
+}
+
+.sidebar header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 72px;
+  padding: 10px 16px 0;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.sidebar header img {
+  height: 24px;
+}
+
+.sidebar header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "SF Pro Display";
+  letter-spacing: 1px;
+  color: rgb(255 255 255 / 95%);
+}
+
+.sidebar header i {
+  margin-left: auto;
+  font-size: 18px;
+  color: rgb(255 255 255 / 95%);
+}
+
+.sidebar input {
+  scale: 0;
+  position: absolute;
+}
+
+.sidebar input#settings:checked ~ div {
+  height: 150px;
+}
+
+.sidebar input#create:checked ~ div {
+  height: 200px;
+}
+
+.sidebar input#profile:checked ~ div {
+  height: 100px;
+}
+
+.sidebar :is(button, label) {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0 16px;
+  color: rgb(255 255 255 / 95%);
+}
+
+.sidebar label p:nth-child(2) {
+  flex: 1 1 auto;
+}
+
+.sidebar input:checked ~ label {
+  background: rgb(255 255 255 / 10%);
+}
+
+.sidebar label i {
+  transition: 0.3s;
+}
+
+.sidebar input:checked ~ label > i:nth-child(3) {
+  rotate: -180deg;
+}
+
+.sidebar input:not(:checked) ~ label:hover,
+.sidebar button:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+.sidebar ul {
+  display: grid;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.sub-menu {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  transition: 0.5s;
+}
+
+.sub-menu ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+}
+
+.sub-menu button {
+  padding-left: 52px;
+}
+
+.sub-menu button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  translate: 0 -50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 35%);
+}
+
+.sidebar i {
+  font-size: 18px;
+  width: 20px;
+  max-width: 20px;
+  min-width: 20px;
+}
