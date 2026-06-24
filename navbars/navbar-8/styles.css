@@ -1,0 +1,133 @@
+body {
+  font-family: "Euclid Circular B", "Poppins";
+  font-size: 18px;
+  margin: 0;
+  height: 100vh;
+  background: #161617;
+  background-image: url("bg.jpg");
+  color: #fff;
+}
+
+:root {
+  --color-primary: rgb(255 255 255 / 78%);
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+nav > :is(h1, span.material-symbols-outlined) {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+}
+
+nav > img {
+  height: 32px;
+  padding: 2px;
+}
+
+nav span {
+  color: #fff;
+  font-size: 20px;
+}
+
+a {
+  cursor: pointer;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: 80px;
+}
+
+.menu li {
+  display: inline-block;
+  width: 90px;
+  color: rgb(255 255 255 / 96%);
+  transition: all 0.3s ease-in-out;
+}
+
+.menu li:hover .submenu {
+  height: 85px;
+}
+
+.menu > li:hover > a {
+  opacity: 1;
+}
+
+.menu > li:hover > a::before {
+  visibility: visible;
+  scale: 1 1;
+}
+
+.submenu {
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  background: linear-gradient(rgb(0 0 0 / 16%), rgb(0 0 0 / 0%));
+  backdrop-filter: blur(10px);
+  height: 0;
+  line-height: 40px;
+  box-sizing: border-box;
+  transition: height 0.3s ease-in-out;
+}
+.menu li .submenu a {
+  color: #fff;
+  opacity: 0;
+  font-size: 16px;
+  transition: opacity 0.25s;
+}
+
+.menu > li:hover .submenu a {
+  opacity: 0.7;
+}
+
+.menu > li .submenu a:hover {
+  background: linear-gradient(rgb(0 0 0 / 38%), rgb(0 0 0 / 0%));
+  opacity: 1;
+}
+
+.menu > li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 7px;
+  font-size: 16px;
+  text-decoration: none;
+  position: relative;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.menu > li > a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 3px;
+  left: 0px;
+  border-radius: 3px;
+  background-color: var(--color-primary);
+  transition: all 0.2s ease-in-out;
+  scale: 0 0;
+  visibility: hidden;
+}
