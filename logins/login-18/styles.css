@@ -1,0 +1,267 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: dark;
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --field: #383838;
+  --text: #f0f0f0;
+  --text-muted: #adadad;
+  --placeholder: #949494;
+  --accent: #be1e2d;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-radius: 30px;
+  box-shadow: 0 20px 40px -10px rgb(0 0 0 / 50%);
+  padding: 20px;
+  width: clamp(300px, 85vw, 500px);
+}
+
+.hero,
+.form {
+  flex: 1 1 50%;
+}
+
+.card :is(h3, p) {
+  font-weight: 500;
+  margin: 0;
+}
+
+.hero {
+  position: relative;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 200px;
+  background: var(--accent);
+}
+
+.form {
+  padding: 30px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form > img {
+  height: 22px;
+  margin-bottom: 12px;
+}
+
+.form > h3 {
+  text-align: center;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.card :is(button, input) {
+  height: 52px;
+  border-radius: 14px;
+  background: var(--field);
+  color: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  width: 100%;
+}
+
+.field {
+  position: relative;
+  display: block;
+}
+
+.field > .material-symbols-outlined {
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  translate: 0 -50%;
+  font-size: 20px;
+  color: var(--placeholder);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.field:focus-within > .material-symbols-outlined {
+  color: var(--text);
+}
+
+.card input {
+  border: 0;
+  padding: 0 14px 0 48px;
+}
+
+.card input::placeholder {
+  color: var(--placeholder);
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+}
+
+.extra-text {
+  display: none;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: 1px solid rgb(255 255 255 / 10%);
+  background: var(--field);
+  font-size: 15px;
+}
+
+.social-btn > img {
+  height: 24px;
+}
+
+.social-btn:first-child > img {
+  height: 20px;
+}
+
+.social-btn > p {
+  color: var(--text-muted);
+}
+
+.form > button[type="submit"] {
+  color: #1a1a1a;
+  font-weight: 500;
+  border: 0;
+  background: var(--text);
+  font-size: 17px;
+}
+
+.or {
+  position: relative;
+  text-align: center;
+  height: 24px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.or::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  translate: 0 -50%;
+  height: 1px;
+  background: rgb(255 255 255 / 40%);
+  opacity: 0.6;
+}
+
+.or::after {
+  content: "Or";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 1;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 12px;
+  padding: 0 12px;
+}
+
+.heart {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation-name: radiate;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-direction: normal;
+  animation-fill-mode: backwards;
+}
+
+.heart path {
+  fill: #ffffff;
+}
+
+.heart:nth-child(1) {
+  animation-delay: -1s;
+}
+
+.heart:nth-child(2) {
+  animation-delay: -2s;
+}
+
+.heart:nth-child(3) {
+  animation-delay: -3s;
+}
+
+.heart:nth-child(4) {
+  animation-delay: -4s;
+}
+
+.heart:nth-child(5) {
+  animation-delay: -5s;
+}
+
+@keyframes radiate {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  1% {
+    opacity: 0.15;
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2);
+  }
+}
+
+@media (width >= 485px) {
+  .card {
+    width: clamp(300px, 90vw, 740px);
+  }
+
+  .form {
+    padding-inline: 50px;
+  }
+
+  .socials {
+    flex-direction: column;
+  }
+
+  .extra-text {
+    display: inline;
+  }
+}
+
+@media (width >= 640px) {
+  .card {
+    flex-direction: row;
+    padding: 8px 0 8px 8px;
+  }
+
+  .form {
+    padding: 30px;
+  }
+}
