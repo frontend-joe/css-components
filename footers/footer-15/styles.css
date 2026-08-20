@@ -1,0 +1,162 @@
+body {
+  background: #232335 url(bg.jpeg) no-repeat center center/cover;
+  height: 100vh;
+  color: #f9f9f9;
+  overflow: hidden;
+  font-family: "Euclid Circular B", "Poppins", sans-serif;
+}
+
+:root {
+  --color-primary: #8a989d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+footer {
+  position: fixed;
+  left: 48px;
+  bottom: 58px;
+  right: 48px;
+  padding: 48px;
+  border-radius: 32px;
+  border: 3px solid rgb(255 255 255 / 10%);
+  backdrop-filter: blur(20px);
+}
+
+.top,
+.bottom {
+  display: flex;
+  gap: 48px;
+}
+
+.top {
+  margin-bottom: 24px;
+}
+
+.bottom {
+  padding: 32px 0 0;
+  align-items: center;
+  border-top: 2px solid rgb(255 255 255 / 10%);
+}
+
+.top:is(.left, .right) {
+  flex: 1 1 50%;
+}
+
+.bottom {
+  gap: 24px;
+}
+
+.bottom .left {
+  flex: 1 1 auto;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 400;
+}
+
+h2,
+p {
+  color: var(--color-primary);
+}
+
+p {
+  margin: 0;
+}
+
+blockquote {
+  padding: 0 24px 0 0;
+  margin: 0 0 24px;
+  font-size: 24px;
+}
+
+button {
+  background: #e8f0fb;
+  color: #000017;
+  font-family: inherit;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  border: 0;
+  border-radius: 40px;
+  padding: 12px 24px 12px 28px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.links {
+  display: flex;
+  gap: 48px;
+  padding-right: 48px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  margin: 0;
+  flex: 1 1 50%;
+}
+
+ul li {
+  display: flex;
+  flex-direction: column;
+  margin: 0 0 12px;
+}
+
+ul li a {
+  margin: 0 0 14px;
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+  font-size: 20px;
+}
+
+@media (width <= 750px) {
+  .top {
+    flex-direction: column;
+  }
+
+  blockquote {
+    padding-right: 0;
+  }
+}
+
+@media (width <= 630px) {
+  .bottom {
+    flex-direction: column-reverse;
+  }
+
+  .links {
+    padding-left: 24px;
+    padding-right: 24px;
+    text-align: center;
+  }
+
+  .top .left {
+    text-align: center;
+  }
+
+  blockquote {
+    padding-left: 4vw;
+    padding-right: 4vw;
+  }
+
+  p {
+    text-align: center;
+  }
+}
