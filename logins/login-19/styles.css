@@ -1,0 +1,327 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f3f3f1;
+  color: #212625;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 660px;
+  height: 520px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 8px solid #ffffff;
+  box-shadow: 0 12px 80px rgba(41, 30, 113, 0.12);
+}
+
+.toggle {
+  display: none;
+}
+
+.card-bg {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  background: url("hero.jpg") center/cover no-repeat;
+  border-radius: 18px;
+  translate: 100% 0;
+  transition: 0.65s ease-in-out;
+}
+
+.toggle:checked ~ .card-bg {
+  translate: 0 0;
+}
+
+.hero,
+.form {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.65s ease-in-out;
+}
+
+.hero.login,
+.form.login {
+  opacity: 1;
+  visibility: visible;
+}
+
+.toggle:checked ~ :is(.hero, .form).login {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.toggle:checked ~ :is(.hero, .form).register {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hero.login {
+  left: 50%;
+  translate: 0;
+}
+
+.toggle:checked ~ .hero.login {
+  translate: 100% 0;
+}
+
+.hero.register {
+  translate: -100% 0;
+}
+
+.toggle:checked ~ .hero.register {
+  translate: 0;
+}
+
+.form.login {
+  translate: 0;
+}
+
+.toggle:checked ~ .form.login {
+  translate: 100% 0;
+}
+
+.form.register {
+  left: 50%;
+  translate: -100% 0;
+}
+
+.toggle:checked ~ .form.register {
+  translate: 0;
+}
+
+.hero {
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  color: #f9f9f9;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.card h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.hero p {
+  margin: 0 0 6px;
+  opacity: 0.85;
+  line-height: 1.45;
+}
+
+.hero label {
+  padding: 12px 40px;
+  border-radius: 32px;
+  letter-spacing: 1px;
+  font-family: inherit;
+  font-size: 13px;
+  color: inherit;
+  border: 1px solid #f9f9f9;
+  background: rgb(255 255 255 / 4%);
+  backdrop-filter: blur(4px);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.hero label:hover {
+  color: #212625;
+  background: #f9f9f9;
+}
+
+.form {
+  background: #ffffff;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 32px;
+}
+
+.form h2 {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.or {
+  position: relative;
+  text-align: center;
+  height: 24px;
+  font-weight: 500;
+  opacity: 0.5;
+}
+
+.or::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  translate: 0 -50%;
+  height: 1px;
+  background: rgb(0 0 0 / 40%);
+  opacity: 0.6;
+}
+
+.or::after {
+  content: "Or";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 1;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 12px;
+  padding: 0 12px;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #212625;
+  font-size: 15px;
+}
+
+.social-btn > img {
+  height: 24px;
+}
+
+.social-btn:first-child > img {
+  height: 20px;
+}
+
+.social-btn > p {
+  color: #212625;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.form label {
+  font-size: 12px;
+  opacity: 0.5;
+}
+
+.form p {
+  margin: 0;
+  text-align: center;
+  opacity: 0.5;
+  font-size: 12px;
+}
+
+input,
+button {
+  height: 46px;
+}
+
+.form input {
+  font-family: inherit;
+  border-radius: 10px;
+  border: 0;
+  background: #f3f3f1;
+  border: 1px solid rgb(0 0 0 / 10%);
+  padding: 14px 12px;
+  color: inherit;
+  width: 100%;
+}
+
+.form input::placeholder {
+  color: #96959e;
+}
+
+.form button {
+  border: 0;
+  border-radius: 10px;
+  padding: 14px 0;
+  font-family: inherit;
+  letter-spacing: 1px;
+  color: inherit;
+  width: 160px;
+  cursor: pointer;
+}
+
+.form button[type="submit"] {
+  background: #212625;
+  color: #f9f9f9;
+  width: 100%;
+}
+
+.remember-forgot {
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  align-items: center;
+  height: 62px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.remember span {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  border-radius: 4px;
+  border: 0;
+  background: #212625;
+  border: 1px solid rgb(0 0 0 / 10%);
+}
+
+.remember span::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 2.5px;
+  width: 6px;
+  height: 3px;
+  border-left: 2px solid #f9f9f9;
+  border-bottom: 2px solid #f9f9f9;
+  rotate: -45deg;
+}
+
+.forgot {
+  opacity: 0.5;
+  font-size: 12px;
+}
