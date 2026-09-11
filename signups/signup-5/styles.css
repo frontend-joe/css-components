@@ -1,0 +1,388 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f2f3fe;
+  color: #4b5679;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+.card {
+  --color-primary: #755eff;
+  --color-muted: #a7a7ad;
+  --color-border: #d3d3dc;
+  --color-card: #ffffff;
+  position: relative;
+  overflow: hidden;
+  width: 660px;
+  height: 440px;
+  border-radius: 32px;
+  background: var(--color-card);
+  box-shadow: 0 12px 80px rgba(0, 0, 0, 0.12);
+}
+
+.toggle {
+  display: none;
+}
+
+.card-bg {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 860px;
+  height: 440px;
+  rotate: -45deg;
+  transform-origin: 0% 100%;
+  background: var(--color-primary);
+}
+
+.card-bg-2 {
+  rotate: 0deg;
+  opacity: 0;
+  right: 0;
+  left: auto;
+  transform-origin: 100% 100%;
+}
+
+.toggle:not(:checked) ~ .card-bg-1 {
+  animation: card-bg-register 1.2s both;
+}
+
+.toggle:checked ~ .card-bg-1 {
+  animation: card-bg-login 1.2s both;
+}
+
+.toggle:not(:checked) ~ .card-bg-2 {
+  animation: card-bg-2-register 1.2s both;
+}
+
+.toggle:checked ~ .card-bg-2 {
+  animation: card-bg-2-login 1.2s both;
+}
+
+.switch {
+  position: absolute;
+  z-index: 4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  display: grid;
+  align-content: start;
+  justify-items: center;
+  padding-top: 64px;
+  pointer-events: none;
+}
+
+.switch.login {
+  translate: 100% 0;
+}
+
+.switch label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  border-radius: 32px;
+  border: 1px solid rgb(249 249 249 / 55%);
+  color: #f9f9f9;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity 0.3s,
+    translate 0.3s,
+    background 0.25s,
+    color 0.25s,
+    border-color 0.25s;
+}
+
+.switch.register label {
+  translate: -100% 0;
+}
+
+.switch.login label {
+  translate: 100% 0;
+}
+
+.toggle:not(:checked) ~ .switch.login label,
+.toggle:checked ~ .switch.register label {
+  opacity: 1;
+  translate: 0;
+  pointer-events: auto;
+  transition:
+    opacity 0.3s 0.85s,
+    translate 0.3s 0.85s,
+    background 0.25s,
+    color 0.25s,
+    border-color 0.25s;
+}
+
+.switch label:hover {
+  background: #f9f9f9;
+  border-color: #f9f9f9;
+  color: var(--color-primary);
+}
+
+.switch .material-symbols-outlined {
+  font-size: 18px;
+  transition: translate 0.3s;
+}
+
+.switch label:hover .material-symbols-outlined {
+  translate: 4px 0;
+}
+
+.form {
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  display: grid;
+  place-items: center;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 270px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.form.register {
+  translate: 100% 0;
+}
+
+.form.register form {
+  translate: 320px 0;
+}
+
+.form.login form {
+  translate: -320px 0;
+}
+
+.toggle:not(:checked) ~ .form.login form,
+.toggle:checked ~ .form.register form {
+  opacity: 1;
+  translate: 0;
+  transition: 0.4s 0.8s;
+}
+
+h2,
+h3,
+p {
+  font-weight: 500;
+  margin: 0;
+}
+
+form :is(h2, h3) {
+  text-align: center;
+}
+
+form > h2 {
+  font-size: 21px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+form > h3 {
+  font-size: 13px;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  color: var(--color-muted);
+}
+
+.card :is(button, input) {
+  height: 42px;
+  border-radius: 10px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  width: 100%;
+  outline-color: var(--color-primary);
+}
+
+.card input {
+  background: #f4f4f7;
+  padding: 0 14px;
+  font-size: 14px;
+}
+
+.field {
+  position: relative;
+  display: block;
+}
+
+.field .icon {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  translate: 0 -50%;
+  width: 16px;
+  height: 16px;
+  color: var(--color-muted);
+  pointer-events: none;
+  transition: color 0.2s;
+}
+
+.field:focus-within .icon {
+  color: var(--color-primary);
+}
+
+.card .field input {
+  padding-left: 40px;
+}
+
+.card input::placeholder {
+  color: var(--color-muted);
+}
+
+form > button[type="submit"] {
+  color: #f9f9f9;
+  background: var(--color-primary);
+  letter-spacing: 0.5px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.socials {
+  display: flex;
+  gap: 8px;
+}
+
+.card .social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: #f4f4f7;
+  border: 0;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.social-btn > img {
+  height: 22px;
+}
+
+.social-btn:first-child > img {
+  height: 18px;
+}
+
+.or {
+  position: relative;
+  text-align: center;
+  height: 20px;
+}
+
+.or::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  translate: 0 -50%;
+  height: 1px;
+  background: var(--color-border);
+}
+
+.or::after {
+  content: "Or";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: 1;
+  background: var(--color-card);
+  color: var(--color-muted);
+  font-size: 12px;
+  padding: 0 12px;
+}
+
+@keyframes card-bg-register {
+  0% {
+    rotate: -45deg;
+  }
+  50% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    rotate: 0deg;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes card-bg-login {
+  0% {
+    opacity: 0;
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 0deg;
+    opacity: 0;
+  }
+  50%,
+  100% {
+    rotate: 0;
+  }
+  50.01%,
+  100% {
+    opacity: 1;
+  }
+  100% {
+    rotate: -45deg;
+  }
+}
+
+@keyframes card-bg-2-register {
+  0%,
+  50% {
+    rotate: 0;
+    opacity: 0;
+  }
+  50.01% {
+    opacity: 1;
+    rotate: 0deg;
+  }
+  100% {
+    opacity: 1;
+    rotate: 45deg;
+  }
+}
+
+@keyframes card-bg-2-login {
+  0% {
+    rotate: 45deg;
+    opacity: 1;
+  }
+  50%,
+  100% {
+    rotate: 0deg;
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}

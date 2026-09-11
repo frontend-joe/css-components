@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Ups</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+  </head>
+  <body>
+    <div class="card">
+      <input type="checkbox" id="toggle" class="toggle" />
+
+      <div class="card-bg card-bg-1"></div>
+      <div class="card-bg card-bg-2"></div>
+
+      <div class="switch login">
+        <label for="toggle">
+          Sign up
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </label>
+      </div>
+
+      <div class="switch register">
+        <label for="toggle">
+          Login
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </label>
+      </div>
+
+      <div class="form login">
+        <form>
+          <h2>Login</h2>
+          <div class="socials">
+            <button type="button" class="social-btn">
+              <img src="google.svg" />
+              <p>Google</p>
+            </button>
+            <button type="button" class="social-btn">
+              <img src="apple.svg" />
+              <p>Apple</p>
+            </button>
+          </div>
+          <span class="or"></span>
+          <label class="field">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <input type="email" placeholder="Email" />
+          </label>
+          <label class="field">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <input type="password" placeholder="Password" />
+          </label>
+          <button type="submit">Login</button>
+        </form>
+      </div>
+
+      <div class="form register">
+        <form>
+          <h2>Sign up</h2>
+          <div class="socials">
+            <button type="button" class="social-btn">
+              <img src="google.svg" />
+              <p>Google</p>
+            </button>
+            <button type="button" class="social-btn">
+              <img src="apple.svg" />
+              <p>Apple</p>
+            </button>
+          </div>
+          <span class="or"></span>
+          <label class="field">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <input type="email" placeholder="Email" />
+          </label>
+          <label class="field">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            <input type="password" placeholder="Password" />
+          </label>
+          <button type="submit">Sign up</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
