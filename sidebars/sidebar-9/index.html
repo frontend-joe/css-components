@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebars</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <input type="checkbox" id="theme" class="theme-toggle" />
+
+    <div class="page">
+      <aside class="sidebar">
+        <div class="profile">
+          <img class="avatar" src="avatar.png" alt="" />
+          <div class="details">
+            <p class="name">Ananya Sharma</p>
+            <p class="role">Admin</p>
+          </div>
+          <i class="icon chevron" data-lucide="chevron-down"></i>
+        </div>
+
+        <div class="search">
+          <input type="text" placeholder="Search dashboard" />
+          <i class="icon" data-lucide="search"></i>
+        </div>
+
+        <nav>
+          <input type="radio" name="nav" id="nav-1" class="nav-radio" checked />
+          <label class="item" for="nav-1">
+            <i class="icon" data-lucide="layout-dashboard"></i>
+            <p>Dashboard</p>
+          </label>
+
+          <input type="radio" name="nav" id="nav-2" class="nav-radio" />
+          <label class="item" for="nav-2">
+            <i class="icon" data-lucide="user"></i>
+            <p>Support</p>
+          </label>
+
+          <input type="radio" name="nav" id="nav-3" class="nav-radio" />
+          <label class="item" for="nav-3">
+            <i class="icon" data-lucide="users"></i>
+            <p>Customers</p>
+          </label>
+
+          <input type="radio" name="nav" id="nav-4" class="nav-radio" />
+          <label class="item" for="nav-4">
+            <i class="icon" data-lucide="ticket"></i>
+            <p>Tickets</p>
+          </label>
+
+          <hr />
+
+          <input type="radio" name="nav" id="nav-5" class="nav-radio" />
+          <label class="item" for="nav-5">
+            <i class="icon" data-lucide="pin"></i>
+            <p>Tasks</p>
+            <span class="badge">2</span>
+          </label>
+
+          <input type="radio" name="nav" id="nav-6" class="nav-radio" />
+          <label class="item" for="nav-6">
+            <i class="icon" data-lucide="network"></i>
+            <p>Projects</p>
+          </label>
+
+          <input type="radio" name="nav" id="nav-7" class="nav-radio" />
+          <label class="item" for="nav-7">
+            <i class="icon" data-lucide="mail"></i>
+            <p>Application</p>
+          </label>
+
+          <input type="radio" name="nav" id="nav-8" class="nav-radio" />
+          <label class="item" for="nav-8">
+            <i class="icon" data-lucide="user-pen"></i>
+            <p>User Management</p>
+          </label>
+        </nav>
+
+        <div class="actions">
+          <label class="action" for="theme" title="Toggle theme">
+            <i class="icon moon" data-lucide="moon"></i>
+            <i class="icon sun" data-lucide="sun"></i>
+          </label>
+          <button class="action" type="button">
+            <i class="icon" data-lucide="settings"></i>
+          </button>
+          <button class="action" type="button">
+            <i class="icon" data-lucide="plus"></i>
+          </button>
+          <button class="action" type="button">
+            <i class="icon" data-lucide="log-out"></i>
+          </button>
+        </div>
+      </aside>
+    </div>
+
+    <script src="https://unpkg.com/lucide@1.46.0"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
