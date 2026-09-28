@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background-color: #073e77;
+  background-image: url("bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 30%;
+  font-family: "Euclid Circular A", "Poppins";
+}
+
+:is(button, label) {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 260px;
+  border-radius: 34px;
+  padding: 0 16px;
+  backdrop-filter: blur(30px);
+  box-shadow:
+    inset 0 1px 1px rgb(255 255 255 / 35%),
+    inset 0 -1px 1px rgb(255 255 255 / 10%),
+    inset 0 0 60px rgb(255 255 255 / 6%),
+    0 24px 60px rgb(0 0 0 / 25%);
+}
+
+.sidebar header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 72px;
+  padding: 10px 16px 0;
+  border-bottom: 1px solid rgb(255 255 255 / 8%);
+}
+
+.sidebar header img {
+  height: 24px;
+}
+
+.sidebar header h1 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "SF Pro Display", inherit;
+  letter-spacing: 1px;
+  color: rgb(255 255 255 / 95%);
+}
+
+.icon {
+  display: block;
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+  font-size: 18px;
+}
+
+.chevron {
+  width: 18px;
+  height: 18px;
+  font-size: 15px;
+  display: grid;
+  place-items: center;
+  transition: rotate 0.3s;
+}
+
+.menu-icon {
+  width: 18px;
+  height: 18px;
+  margin-left: auto;
+  color: rgb(255 255 255 / 95%);
+}
+
+.sidebar ul {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.nav {
+  flex: 1;
+}
+
+.nav > li:last-child {
+  margin-top: auto;
+  margin-bottom: 16px;
+}
+
+.nav-radio {
+  display: none;
+}
+
+.sidebar :is(button, label) {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  height: 50px;
+  width: 100%;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  padding: 0 16px;
+  color: rgb(255 255 255 / 95%);
+  transition: background-color 0.3s;
+}
+
+.sidebar :is(button, label) p {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+.nav-radio:checked + label {
+  background: rgb(255 255 255 / 10%);
+}
+
+.nav-radio:not(:checked) + label:hover,
+.sub-menu button:hover {
+  background: rgb(255 255 255 / 3%);
+}
+
+.nav-radio:checked + label .chevron {
+  rotate: -180deg;
+}
+
+.sub-menu {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s;
+}
+
+.sub-menu > ul {
+  overflow: hidden;
+}
+
+.nav-radio:checked ~ .sub-menu {
+  grid-template-rows: 1fr;
+}
+
+.sub-menu button {
+  padding-left: 48px;
+}
+
+.sub-menu button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 24px;
+  translate: 0 -50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: rgb(255 255 255 / 35%);
+}

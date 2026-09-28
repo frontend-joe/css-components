@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebars</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.2/src/regular/style.css"
+    />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <header>
+        <img src="logo.svg" alt="logo" />
+        <h1>delta.ai</h1>
+        <i class="icon menu-icon ph ph-list"></i>
+      </header>
+
+      <ul class="nav">
+        <li>
+          <input type="radio" name="nav" id="nav-home" class="nav-radio" />
+          <label for="nav-home">
+            <i class="icon ph ph-house"></i>
+            <p>Home</p>
+          </label>
+        </li>
+
+        <li>
+          <input type="radio" name="nav" id="nav-products" class="nav-radio" />
+          <label for="nav-products">
+            <i class="icon ph ph-shopping-cart"></i>
+            <p>Products</p>
+            <i class="icon chevron ph ph-caret-down"></i>
+          </label>
+          <div class="sub-menu">
+            <ul>
+              <li><button type="button">Agents</button></li>
+              <li><button type="button">Analytics</button></li>
+              <li><button type="button">Dashboards</button></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <input type="radio" name="nav" id="nav-schedule" class="nav-radio" />
+          <label for="nav-schedule">
+            <i class="icon ph ph-calendar"></i>
+            <p>Schedule</p>
+            <i class="icon chevron ph ph-caret-down"></i>
+          </label>
+          <div class="sub-menu">
+            <ul>
+              <li><button type="button">Generation</button></li>
+              <li><button type="button">Management</button></li>
+              <li><button type="button">Suspension</button></li>
+              <li><button type="button">Alerts</button></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <input type="radio" name="nav" id="nav-people" class="nav-radio" />
+          <label for="nav-people">
+            <i class="icon ph ph-users"></i>
+            <p>People</p>
+            <i class="icon chevron ph ph-caret-down"></i>
+          </label>
+          <div class="sub-menu">
+            <ul>
+              <li><button type="button">Users</button></li>
+              <li><button type="button">Contacts</button></li>
+            </ul>
+          </div>
+        </li>
+
+        <li>
+          <input
+            type="radio"
+            name="nav"
+            id="nav-notifications"
+            class="nav-radio"
+          />
+          <label for="nav-notifications">
+            <i class="icon ph ph-bell"></i>
+            <p>Notifications</p>
+          </label>
+        </li>
+
+        <li>
+          <input type="radio" name="nav" id="nav-account" class="nav-radio" />
+          <label for="nav-account">
+            <i class="icon ph ph-lock"></i>
+            <p>Account</p>
+          </label>
+        </li>
+
+        <li>
+          <input type="radio" name="nav" id="nav-settings" class="nav-radio" />
+          <label for="nav-settings">
+            <i class="icon ph ph-gear"></i>
+            <p>Settings</p>
+          </label>
+        </li>
+      </ul>
+    </aside>
+  </body>
+</html>
