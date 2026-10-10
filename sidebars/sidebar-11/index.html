@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebars</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <input type="checkbox" id="theme" class="theme-toggle" />
+
+    <div class="page">
+      <aside class="sidebar">
+        <div class="chrome">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="profile">
+          <span class="avatar online"><img src="profile.jpg" alt="" /></span>
+          <div class="details">
+            <p class="name">James C.</p>
+            <p class="role">Admin</p>
+          </div>
+        </div>
+
+        <div class="search">
+          <i data-lucide="search"></i>
+          <input type="text" placeholder="Search" />
+        </div>
+
+        <p class="section-label">Pages</p>
+
+        <ul class="nav">
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-dashboard"
+              class="nav-radio"
+            />
+            <label for="nav-dashboard">
+              <span class="icon-wrap"><i data-lucide="layout-grid"></i></span>
+              <p>Dashboard</p>
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-tasks"
+              class="nav-radio"
+              checked
+            />
+            <label for="nav-tasks">
+              <span class="icon-wrap"><i data-lucide="briefcase"></i></span>
+              <p>Tasks</p>
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-notifications"
+              class="nav-radio"
+            />
+            <label for="nav-notifications">
+              <span class="icon-wrap has-dot"><i data-lucide="bell"></i></span>
+              <p>Notifications</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-reports" class="nav-radio" />
+            <label for="nav-reports">
+              <span class="icon-wrap"><i data-lucide="chart-column"></i></span>
+              <p>Reports</p>
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-documents"
+              class="nav-radio"
+            />
+            <label for="nav-documents">
+              <span class="icon-wrap"><i data-lucide="file-text"></i></span>
+              <p>Documents</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-inbox" class="nav-radio" />
+            <label for="nav-inbox">
+              <span class="icon-wrap has-dot"><i data-lucide="mail"></i></span>
+              <p>Inbox</p>
+            </label>
+          </li>
+          <li>
+            <input
+              type="radio"
+              name="nav"
+              id="nav-settings"
+              class="nav-radio"
+            />
+            <label for="nav-settings">
+              <span class="icon-wrap"><i data-lucide="settings"></i></span>
+              <p>Settings</p>
+            </label>
+          </li>
+        </ul>
+
+        <p class="section-label">Team</p>
+
+        <ul class="team">
+          <li>
+            <span class="avatar sm online"><img src="1.jpg" alt="" /></span>
+            <p>Andre Clarke</p>
+            <button class="dm" type="button" aria-label="Message Andre Clarke">
+              <i data-lucide="mail"></i>
+            </button>
+          </li>
+          <li>
+            <span class="avatar sm online"><img src="2.jpg" alt="" /></span>
+            <p>Sofia Marsh</p>
+            <button class="dm" type="button" aria-label="Message Sofia Marsh">
+              <i data-lucide="mail"></i>
+            </button>
+          </li>
+          <li>
+            <span class="avatar sm"><img src="3.jpg" alt="" /></span>
+            <p>Marco Ban</p>
+            <button class="dm" type="button" aria-label="Message Marco Ban">
+              <i data-lucide="mail"></i>
+            </button>
+          </li>
+          <li>
+            <span class="avatar sm"><img src="4.jpg" alt="" /></span>
+            <p>Anna Reid</p>
+            <button class="dm" type="button" aria-label="Message Anna Reid">
+              <i data-lucide="mail"></i>
+            </button>
+          </li>
+        </ul>
+
+        <label class="theme-switch" for="theme">
+          <p>Dark mode</p>
+          <span class="switch"></span>
+        </label>
+      </aside>
+    </div>
+
+    <script src="https://unpkg.com/lucide@1.46.0"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
