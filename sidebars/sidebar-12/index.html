@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sidebars</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <input type="checkbox" id="theme" class="theme-toggle" />
+
+    <div class="page">
+      <aside class="sidebar">
+        <div class="brand">
+          <img class="logo" src="logo.svg" alt="" />
+          <span class="brand-text">
+            <span class="brand-name">Student Admin</span>
+            <span class="brand-sub">David Ozorio Jr</span>
+          </span>
+          <i class="brand-chevron" data-lucide="chevrons-up-down"></i>
+        </div>
+
+        <div class="search">
+          <i data-lucide="search"></i>
+          <input type="text" placeholder="Search..." />
+        </div>
+
+        <p class="section-label">Pages</p>
+
+        <ul class="nav">
+          <li>
+            <input type="radio" name="nav" id="nav-dashboard" class="nav-radio" checked />
+            <label for="nav-dashboard">
+              <span class="icon-wrap"><i data-lucide="layout-grid"></i></span>
+              <p>Dashboard</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-students" class="nav-radio" />
+            <label for="nav-students">
+              <span class="icon-wrap"><i data-lucide="graduation-cap"></i></span>
+              <p>Students</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-teachers" class="nav-radio" />
+            <label for="nav-teachers">
+              <span class="icon-wrap"><i data-lucide="book-user"></i></span>
+              <p>Teachers</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-parents" class="nav-radio" />
+            <label for="nav-parents">
+              <span class="icon-wrap"><i data-lucide="users-round"></i></span>
+              <p>Parents</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-library" class="nav-radio" />
+            <label for="nav-library">
+              <span class="icon-wrap"><i data-lucide="library"></i></span>
+              <p>Library</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-class" class="nav-radio" />
+            <label for="nav-class">
+              <span class="icon-wrap"><i data-lucide="hourglass"></i></span>
+              <p>Class</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-attendance" class="nav-radio" />
+            <label for="nav-attendance">
+              <span class="icon-wrap"><i data-lucide="calendar-check"></i></span>
+              <p>Attendance</p>
+            </label>
+          </li>
+        </ul>
+
+        <p class="section-label">Account</p>
+
+        <ul class="nav">
+          <li>
+            <input type="radio" name="nav" id="nav-help-line" class="nav-radio" />
+            <label for="nav-help-line">
+              <span class="icon-wrap"><i data-lucide="circle-help"></i></span>
+              <p>Help Line</p>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="nav" id="nav-settings" class="nav-radio" />
+            <label for="nav-settings">
+              <span class="icon-wrap"><i data-lucide="settings"></i></span>
+              <p>Settings</p>
+            </label>
+          </li>
+          <li>
+            <button type="button">
+              <span class="icon-wrap"><i data-lucide="log-out"></i></span>
+              <p>Log Out</p>
+            </button>
+          </li>
+        </ul>
+
+        <p class="section-label">Connections</p>
+
+        <div class="avatars">
+          <img src="avatar-1.jpg" alt="" />
+          <img src="avatar-2.jpg" alt="" />
+          <img src="avatar-3.jpg" alt="" />
+          <img src="avatar-4.jpg" alt="" />
+          <img src="avatar-5.jpg" alt="" />
+        </div>
+
+        <label class="theme-switch" for="theme">
+          <span class="switch"></span>
+          <p>Dark Mode</p>
+        </label>
+      </aside>
+    </div>
+
+    <script src="https://unpkg.com/lucide@1.46.0"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
