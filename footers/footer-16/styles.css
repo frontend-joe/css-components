@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  background: linear-gradient(#15203a, #121418);
+  font-family: "Euclid Circular A", "Poppins";
+  color: #d6dfed;
+  height: 100vh;
+}
+
+.background {
+  position: absolute;
+  overflow: hidden;
+  z-index: -1;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  translate: -50% 0;
+  width: 150vw;
+  height: 400px;
+}
+
+svg {
+  position: absolute;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  transform-origin: bottom;
+  pointer-events: none;
+  transform: scale(2.5);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.socials {
+  gap: 10px;
+}
+
+.socials a {
+  position: relative;
+  font-size: 24px;
+  background: rgb(11 89 255 / 26%);
+  backdrop-filter: blur(10px);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: scale 0.25s;
+}
+
+.socials a:hover {
+  scale: 1.1;
+}
+
+.socials a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  translate: -50% 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgb(8 11 18 / 94%);
+  color: #eceefc;
+  font-family: "Euclid Circular A", "Poppins", sans-serif;
+  font-size: 12px;
+  line-height: 1;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 0.25s,
+    translate 0.25s;
+}
+
+.socials a:hover::after {
+  opacity: 1;
+  translate: -50% 0;
+}
+
+.links a {
+  padding: 0 7px;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.links:has(a:hover) a:not(:hover) {
+  opacity: 0.3;
+}
+
+.legal {
+  font-size: 12px;
+  margin: 0;
+  color: #88abeb;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  padding-bottom: 100px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 100%;
+}
