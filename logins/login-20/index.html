@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logins</title>
+    <link rel="stylesheet" href="https://unpkg.com/akar-icons-fonts@1.1.22/src/css/akar-icons.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="card">
+      <input type="radio" name="view" id="view-signin" class="toggle" checked />
+      <input type="radio" name="view" id="view-signup" class="toggle" />
+      <ul class="card-nav">
+        <li>
+          <img src="logo.svg" alt="logo" />
+          <span class="active-bar"></span>
+        </li>
+        <li>
+          <label for="view-signin" class="signin">
+            <i class="ai-person-check"></i>
+            <span>Sign In</span>
+          </label>
+        </li>
+        <li>
+          <label for="view-signup" class="signup">
+            <i class="ai-person-add"></i>
+            <span>Sign Up</span>
+          </label>
+        </li>
+      </ul>
+
+      <div class="card-hero">
+        <div class="card-hero-bg"></div>
+        <div class="card-hero-inner">
+          <div class="card-hero-content signin">
+            <h2>Welcome back</h2>
+            <h3>Please enter your credentials</h3>
+            <a class="terms">
+              Terms &amp; Conditions
+              <i class="ai-download"></i>
+            </a>
+          </div>
+          <div class="card-hero-content signup">
+            <h2>Join us today</h2>
+            <h3>Creating an account is quick</h3>
+            <a class="terms">
+              Terms &amp; Conditions
+              <i class="ai-download"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="card-form">
+        <div class="forms">
+          <form class="signin">
+            <p>Don't have an account? <label for="view-signup">Sign Up</label></p>
+            <label>Email</label>
+            <div class="control">
+              <input type="text" autocomplete="off" placeholder="youremail@gmail.com" />
+              <i class="ai-envelope"></i>
+            </div>
+            <label>Password</label>
+            <div class="control">
+              <input type="text" class="password" autocomplete="off" placeholder="●●●●●●●●●●●●●●●" />
+              <label class="eye">
+                <input type="checkbox" class="toggle" aria-label="Show password" />
+                <span class="material-symbols-outlined hidden-icon">visibility_off</span>
+                <span class="material-symbols-outlined visible-icon">visibility</span>
+              </label>
+            </div>
+            <div class="remember-forgot">
+              <label class="remember">
+                <input type="checkbox" checked />
+                <span>Remember</span>
+              </label>
+              <a class="forgot">Forgot password?</a>
+            </div>
+            <button>
+              <span>Sign In</span>
+              <i class="ai-arrow-right"></i>
+            </button>
+            <span class="or">Or sign in with</span>
+            <div class="socials">
+              <button type="button" class="social-btn"><img src="google.svg" alt="Google" /></button>
+              <button type="button" class="social-btn"><img src="facebook.svg" alt="Facebook" /></button>
+              <button type="button" class="social-btn"><img src="apple.svg" alt="Apple" /></button>
+            </div>
+          </form>
+
+          <form class="signup">
+            <p>Already have an account? <label for="view-signin">Sign In</label></p>
+            <label>Username</label>
+            <div class="control">
+              <input type="text" placeholder="myusername" />
+              <i class="ai-person"></i>
+            </div>
+            <label>Email</label>
+            <div class="control">
+              <input type="text" autocomplete="off" placeholder="youremail@gmail.com" />
+              <i class="ai-envelope"></i>
+            </div>
+            <label>Password</label>
+            <div class="control">
+              <input type="text" class="password" autocomplete="off" placeholder="●●●●●●●●●●●●●●●" />
+              <label class="eye">
+                <input type="checkbox" class="toggle" aria-label="Show password" />
+                <span class="material-symbols-outlined hidden-icon">visibility_off</span>
+                <span class="material-symbols-outlined visible-icon">visibility</span>
+              </label>
+            </div>
+            <button>
+              <span>Sign Up</span>
+              <i class="ai-arrow-right"></i>
+            </button>
+            <span class="or">Or sign in with</span>
+            <div class="socials">
+              <button type="button" class="social-btn"><img src="google.svg" alt="Google" /></button>
+              <button type="button" class="social-btn"><img src="facebook.svg" alt="Facebook" /></button>
+              <button type="button" class="social-btn"><img src="apple.svg" alt="Apple" /></button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

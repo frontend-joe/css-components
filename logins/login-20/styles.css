@@ -1,0 +1,476 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  --color-primary: #6d71ca;
+  --color-dark: #6165ab;
+  --color-muted: #747b92;
+  --color-text: #1b1f24;
+  background: #eef0f7;
+  color: #abaab8;
+  overflow: hidden;
+  font-family: "Euclid Circular B", "Poppins";
+}
+
+.toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+input,
+button {
+  font-family: inherit;
+  color: inherit;
+  border: 0;
+  border-radius: 10px;
+  height: 44px;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+p {
+  font-size: 12px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.card-form p label {
+  font-size: inherit;
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.card {
+  display: flex;
+  align-content: stretch;
+  width: 680px;
+  height: 460px;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow:
+    0 10px 30px rgba(40, 55, 75, 0.08),
+    0 30px 70px rgba(40, 55, 75, 0.07);
+}
+
+.card-nav {
+  position: relative;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100px;
+}
+
+.card-nav .active-bar {
+  position: absolute;
+  top: 33.33%;
+  left: 0;
+  height: 33.33%;
+  transition: 0.4s ease-in-out;
+}
+
+.card:has(#view-signup:checked) .card-nav .active-bar {
+  top: 66.66%;
+}
+
+.card-nav .active-bar::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  width: 6px;
+  height: 60px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  background: var(--color-primary);
+}
+
+.card-nav img {
+  height: 44px;
+}
+
+.card-nav li {
+  flex: 1 1 auto;
+  display: grid;
+  place-items: center;
+}
+
+.card:has(#view-signin:checked) .card-nav .signin,
+.card:has(#view-signup:checked) .card-nav .signup {
+  color: var(--color-dark);
+}
+
+.card-nav label {
+  cursor: pointer;
+  font-size: 13px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.card:has(#view-signin:checked) .card-nav .signup:hover,
+.card:has(#view-signup:checked) .card-nav .signin:hover {
+  opacity: 0.675;
+  color: var(--color-dark);
+}
+
+.card-nav label i {
+  font-size: 20px;
+}
+
+.card-hero {
+  position: relative;
+  margin: -30px 0;
+  flex: 0 0 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(40, 55, 75, 0.22);
+}
+
+.card-hero-bg {
+  position: absolute;
+  inset: -24px 0;
+  background: url("hero.jpg") center / cover no-repeat;
+  transition: translate 0.5s ease-in-out;
+}
+
+.card:has(#view-signup:checked) .card-hero-bg {
+  translate: 0 -24px;
+}
+
+.card-hero-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transition: 0.5s ease-in-out;
+}
+
+.card:has(#view-signup:checked) .card-hero-inner {
+  top: -100%;
+}
+
+.card-hero-content {
+  height: 520px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card:has(#view-signin:checked) .card-hero-content.signin,
+.card:has(#view-signup:checked) .card-hero-content.signup {
+  opacity: 1;
+}
+
+h2,
+h3 {
+  text-align: left;
+  font-weight: 400;
+  margin: 0;
+  padding-left: 24px;
+}
+
+.card-hero h2 {
+  color: #f9f9f9;
+  margin: 0 0 2px;
+  padding-left: 0;
+  text-align: center;
+}
+
+.card-hero h3 {
+  color: #f9f9f9;
+  opacity: 0.75;
+  font-size: 13px;
+  padding-left: 0;
+  text-align: center;
+}
+
+.card-hero .terms {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  color: #f9f9f9;
+  font-size: 11px;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.card-hero .terms i {
+  font-size: 13px;
+}
+
+.card-hero .terms:hover {
+  opacity: 1;
+}
+
+.card-form {
+  position: relative;
+  overflow: hidden;
+  padding: 24px;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.card-form .forms {
+  position: absolute;
+  height: 200%;
+  left: 0;
+  right: 0;
+  top: 0;
+  transition: 0.5s ease-in-out;
+}
+
+.card:has(#view-signup:checked) .card-form .forms {
+  top: -100%;
+}
+
+.card-form form {
+  height: 460px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+  opacity: 0.5;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0s 0.5s;
+}
+
+.card:has(#view-signin:checked) .card-form form.signin,
+.card:has(#view-signup:checked) .card-form form.signup {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
+
+.card-form label {
+  font-size: 13px;
+  color: var(--color-muted);
+}
+
+.control {
+  position: relative;
+}
+
+.control input {
+  background: #eef1f7;
+  border: 0;
+  border-radius: 10px;
+  width: 100%;
+  padding: 0 40px 0 12px;
+}
+
+.control input:focus {
+  outline-color: var(--color-primary);
+}
+
+.control input::placeholder {
+  color: #abaab8;
+}
+
+.control input:focus ~ i {
+  color: var(--color-dark);
+}
+
+.control i {
+  color: var(--color-muted);
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  translate: 0 -50%;
+  transition: 0.3s;
+}
+
+.card-form form > button {
+  padding: 12px 20px;
+  color: #f9f9f9;
+  border: 0;
+  margin-top: 12px;
+  background: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-form form > button i {
+  max-width: 0;
+  margin-left: 0;
+  opacity: 0;
+  overflow: hidden;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.card-form form > button:hover i {
+  max-width: 16px;
+  margin-left: 8px;
+  opacity: 1;
+}
+
+p.footer {
+  opacity: 0.75;
+}
+
+.control .password {
+  -webkit-text-security: disc;
+}
+
+.control:has(.eye input:checked) .password {
+  -webkit-text-security: none;
+}
+
+.control .eye {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  translate: 0 -50%;
+  height: auto;
+  padding: 4px;
+  background: transparent;
+  color: var(--color-muted);
+  display: grid;
+  place-items: center;
+  transition: color 0.3s;
+}
+
+.control .eye:hover {
+  color: var(--color-dark);
+}
+
+.control .eye .material-symbols-outlined {
+  font-size: 20px;
+}
+
+.control .eye .visible-icon,
+.control .eye:has(input:checked) .hidden-icon {
+  display: none;
+}
+
+.control .eye:has(input:checked) .visible-icon {
+  display: block;
+}
+
+.control .eye:has(input:focus-visible) {
+  outline: 2px solid var(--color-primary);
+  border-radius: 6px;
+}
+
+.remember-forgot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12px;
+  height: 48px;
+  margin: 6px 0 4px;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--color-muted);
+  cursor: pointer;
+}
+
+.remember input {
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1px solid rgb(0 0 0 / 20%);
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.remember input:checked {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.remember input:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  rotate: 45deg;
+}
+
+.forgot {
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.or {
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-muted);
+  opacity: 0.625;
+  margin: 4px 0;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-btn {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  background: #eef1f7;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.social-btn:hover {
+  background: #e1e5f0;
+}
+
+.social-btn img {
+  height: 22px;
+  width: 22px;
+  object-fit: contain;
+  transition: scale 0.2s;
+}
+
+.social-btn:hover img {
+  scale: 1.1;
+}
